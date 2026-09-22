@@ -1,12 +1,14 @@
 # Encontro de Alinhamento Técnico da Área Disciplinar — 2026
 
-Site estático responsivo do **Relatório de Execução e Resultados**.
+Apresentação executiva em HTML do **Relatório de Execução e Resultados**, no mesmo padrão visual (obsidian/grafite/dourado policial) do painel de alinhamento disciplinar.
 
-- Página principal: `index.html`
-- Sem dependências externas, CDN ou framework.
-- Layout adaptado para Safari/iPhone, incluindo `viewport-fit=cover` e áreas seguras.
-- Navegação móvel, tabelas com rolagem horizontal e entendimentos expansíveis.
-- Conteúdo revisado pela demandante e sem dados pessoais de casos ou respondentes.
+- Página principal: `index.html` · logotipo em `assets/logo-pf.png`
+- Sem dependências externas, CDN ou framework — HTML/CSS/JS puros, um único arquivo + 1 imagem.
+- Abertura animada (brasão da PF) idêntica ao painel de referência, com botão "Pular Abertura" e opção de rever a qualquer momento.
+- 22 telas dinâmicas (uma por tópico do relatório), navegáveis por toque/swipe, teclado (setas, Home/End) ou pelos botões Anterior/Avançar — sem uso de pop-ups/modais.
+- Layout adaptado para iPad e para o navegador interno do WhatsApp (viewport-fit=cover, áreas seguras, alvos de toque ≥40px, sem dependência de vh problemático em WebView).
+- Link direto para qualquer tela via hash (`#s-N`), útil para compartilhar um tópico específico.
+- Conteúdo fiel ao relatório oficial, sem dados pessoais de casos, processos ou respondentes da avaliação.
 - Meta `noindex,nofollow,noarchive` incluída para desencorajar indexação por buscadores.
 
 ## Publicação no GitHub Pages
