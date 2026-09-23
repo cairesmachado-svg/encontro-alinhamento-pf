@@ -2,20 +2,22 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-<title>Relatório de Execução e Resultados — Encontro de Alinhamento Técnico da Área Disciplinar 2026 | COGER/PF</title>
-<meta name="description" content="Apresentação executiva do Relatório de Execução e Resultados do Encontro de Alinhamento Técnico da Área Disciplinar — 2026, realizado pela Corregedoria-Geral da Polícia Federal.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Encontro de Alinhamento Técnico da Área Disciplinar — 2026 · Relatório de Execução e Resultados</title>
+<meta name="description" content="Apresentação do Relatório de Execução e Resultados do Encontro de Alinhamento Técnico da Área Disciplinar — 2026, realizado pela Corregedoria-Geral da Polícia Federal — Coordenação-Geral de Disciplina.">
 <meta name="robots" content="noindex, nofollow, noarchive">
 <meta name="theme-color" content="#070709">
+<meta name="color-scheme" content="dark">
 <meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Alinhamento Disciplinar 2026">
 <meta name="format-detection" content="telephone=no">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Relatório de Execução e Resultados — Encontro de Alinhamento Técnico da Área Disciplinar 2026">
-<meta property="og:description" content="Apresentação executiva do encontro promovido pela Corregedoria-Geral da Polícia Federal — Coordenação-Geral de Disciplina. 4 dias, 22 blocos, 11 entendimentos técnicos consolidados.">
-<meta property="og:image" content="https://cairesmachado-svg.github.io/encontro-alinhamento-pf/assets/logo-pf.png">
-<meta property="og:url" content="https://cairesmachado-svg.github.io/encontro-alinhamento-pf/">
+<meta property="og:title" content="Encontro de Alinhamento Técnico da Área Disciplinar — 2026 · Relatório de Execução e Resultados">
+<meta property="og:description" content="Corregedoria-Geral da Polícia Federal — Coordenação-Geral de Disciplina. 8 a 11 de setembro de 2026 · Academia Nacional de Polícia · Brasília-DF.">
+<meta property="og:image" content="https://mcaires1980.github.io/encontro-alinhamento-pf/assets/logo-pf.png">
+<meta property="og:url" content="https://mcaires1980.github.io/encontro-alinhamento-pf/">
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="assets/logo-pf.png">
 <link rel="apple-touch-icon" href="assets/logo-pf.png">
@@ -92,8 +94,8 @@ body {
    ========================================================================== */
 .splash-screen {
   position: fixed;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh; height: 100dvh;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100%; height: 100vh; height: 100dvh;
   background: radial-gradient(circle at center, #1b1b22 0%, #0d0d10 55%, #040405 100%);
   z-index: 999999;
   display: flex;
@@ -224,6 +226,7 @@ body {
   cursor: pointer;
   display: flex; align-items: center; gap: 6px;
   transition: all 0.2s ease;
+  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
 }
 
@@ -255,6 +258,7 @@ header {
   flex-shrink: 0;
   background: linear-gradient(180deg, rgba(16, 16, 20, 0.98) 0%, rgba(10, 10, 13, 0.98) 100%);
   border-bottom: 1px solid var(--border-color);
+  -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
   box-shadow: 0 4px 25px rgba(0,0,0,0.5);
 }
@@ -323,13 +327,13 @@ header {
 .deck { position: relative; flex: 1; min-height: 0; overflow: hidden; background: var(--bg-space); }
 
 .slide {
-  position: absolute; inset: 0;
+  position: absolute; top: 0; right: 0; bottom: 0; left: 0;
   display: flex; flex-direction: column;
-  opacity: 0; pointer-events: none;
+  opacity: 0; pointer-events: none; visibility: hidden;
   transform: translateY(16px);
-  transition: opacity 0.4s ease, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.4s ease, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), visibility 0s linear 0.45s;
 }
-.slide.active { opacity: 1; pointer-events: auto; transform: translateY(0); }
+.slide.active { opacity: 1; pointer-events: auto; visibility: visible; transform: translateY(0); transition-delay: 0s; }
 
 .slide-inner {
   flex: 1; min-height: 0;
@@ -483,7 +487,6 @@ header {
 .time-badge { background: #202026; border: 1px solid rgba(255, 255, 255, 0.08); padding: 4px 9px; border-radius: 5px; font-size: 0.7rem; font-weight: 700; color: var(--text-secondary); letter-spacing: 0.02em; display: inline-block; }
 .timeline-content h4 { font-size: 0.94rem; font-weight: 700; color: #fff; margin-bottom: 3px; }
 .timeline-content p { font-size: 0.8rem; color: var(--text-secondary); line-height: 1.5; }
-.timeline-item.extra .timeline-content h4::after { content: "Intervenção complementar"; margin-left: 8px; background: rgba(212,175,55,0.12); border: 1px solid var(--border-gold); color: var(--accent-gold-light); font-size: 0.6rem; font-weight: 800; text-transform: uppercase; padding: 2px 7px; border-radius: 4px; letter-spacing: 0.04em; vertical-align: middle; }
 
 /* Chips */
 .chip-row { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -584,6 +587,7 @@ details.expand .expand-body p + p { margin-top: 8px; }
   padding: 9px max(16px, env(safe-area-inset-right)) max(9px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
   background: linear-gradient(0deg, rgba(10,10,13,0.98), rgba(14,14,18,0.92));
   border-top: 1px solid var(--border-color);
+  -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
 }
 .deck-nav-btn {
@@ -625,108 +629,91 @@ details.expand .expand-body p + p { margin-top: 8px; }
   * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
 
+
 /* ==========================================================================
-   IMPACT LAYER — apresentação executiva em telas
-   Inspirada no painel de referência: obsidian + ouro + glow + glass
+   COMPLEMENTOS
    ========================================================================== */
-.ambient-scene{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0;background:
-  radial-gradient(circle at 14% 18%,rgba(212,175,55,.09),transparent 26%),
-  radial-gradient(circle at 86% 72%,rgba(254,240,138,.045),transparent 30%),
-  linear-gradient(145deg,#050506 0%,#09090c 48%,#060607 100%)}
-.ambient-grid{position:absolute;inset:-12%;opacity:.14;background-image:
-  linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px),
-  linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px);
-  background-size:48px 48px;mask-image:radial-gradient(circle at center,#000 22%,transparent 78%);
-  animation:impactGridDrift 28s linear infinite}
-.ambient-orb{position:absolute;border-radius:50%;filter:blur(54px);opacity:.18;mix-blend-mode:screen;animation:impactOrb 11s ease-in-out infinite alternate}
-.orb-one{width:360px;height:360px;left:-120px;top:12%;background:rgba(212,175,55,.34)}
-.orb-two{width:300px;height:300px;right:-90px;bottom:6%;background:rgba(254,240,138,.16);animation-delay:-4s}
-.orb-three{width:180px;height:180px;right:18%;top:7%;background:rgba(212,175,55,.12);animation-delay:-7s}
-@keyframes impactGridDrift{to{transform:translate3d(48px,48px,0)}}
-@keyframes impactOrb{from{transform:translate3d(0,0,0) scale(.92)}to{transform:translate3d(18px,-22px,0) scale(1.12)}}
+a.xref { color: var(--accent-gold-light); text-decoration: underline dotted; text-underline-offset: 3px; cursor: pointer; }
+a.xref:hover { color: #fff; }
+:focus-visible { outline: 2px solid var(--accent-gold); outline-offset: 2px; }
+.slide-lede a.xref, .info-card a.xref { font-weight: 600; }
 
-#main-app{position:relative;z-index:2}
-.splash-screen{background:
-  radial-gradient(circle at 50% 42%,rgba(212,175,55,.16) 0%,rgba(27,27,34,.96) 24%,#0d0d10 56%,#040405 100%)}
-.splash-logo-container:before,.cover-slide .slide-inner:before{content:"";position:absolute;width:min(58vw,440px);aspect-ratio:1;border-radius:50%;
-  border:1px solid rgba(212,175,55,.12);box-shadow:0 0 80px rgba(212,175,55,.08),inset 0 0 70px rgba(212,175,55,.05);
-  animation:impactRing 8s linear infinite;pointer-events:none}
-.splash-logo-container:after,.cover-slide .slide-inner:after{content:"";position:absolute;width:min(42vw,320px);aspect-ratio:1;border-radius:50%;
-  border:1px dashed rgba(212,175,55,.16);animation:impactRingReverse 12s linear infinite;pointer-events:none}
-@keyframes impactRing{to{transform:rotate(360deg)}}@keyframes impactRingReverse{to{transform:rotate(-360deg)}}
+.plain-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.plain-list li { background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 8px; padding: 9px 13px; font-size: 0.86rem; color: #e4e4e7; line-height: 1.5; }
+.step-list.numbered { max-width: 760px; }
 
-.cover-slide .slide-inner{position:relative;isolation:isolate}
-.cover-slide .slide-inner>*{position:relative;z-index:2}
-.cover-badge{animation:impactFloat 4.4s ease-in-out infinite;filter:drop-shadow(0 0 28px rgba(212,175,55,.46)) drop-shadow(0 18px 28px rgba(0,0,0,.72))}
-@keyframes impactFloat{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-8px) scale(1.015)}}
-.cover-title{background:linear-gradient(102deg,#fff 8%,#f4f4f6 42%,#fef08a 52%,#fff 64%,#fff 100%);
-  background-size:220% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:impactShimmer 7s linear infinite}
-@keyframes impactShimmer{to{background-position:-220% center}}
+.axis-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 12px; }
+.axis-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 14px 16px; text-align: left; color: #e4e4e7; font-size: 0.9rem; font-weight: 600; line-height: 1.4; cursor: pointer; display: flex; gap: 12px; align-items: flex-start; transition: all 0.2s ease; font-family: inherit; }
+.axis-card:hover { border-color: var(--border-gold); background: var(--bg-card-hover); transform: translateY(-1px); }
+.axis-card .ax-n { flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; background: rgba(212,175,55,0.12); border: 1px solid var(--border-gold); color: var(--accent-gold-light); font-size: 0.76rem; font-weight: 800; display: flex; align-items: center; justify-content: center; }
 
-.slide:before{content:"";position:absolute;inset:0;pointer-events:none;background:
-  radial-gradient(circle at 85% 10%,rgba(212,175,55,.07),transparent 26%),
-  linear-gradient(90deg,rgba(212,175,55,.025),transparent 24%);opacity:.85}
-.slide:after{content:attr(data-slide);position:absolute;right:clamp(18px,4vw,54px);bottom:clamp(54px,8vh,84px);
-  font-size:clamp(5rem,16vw,12rem);font-weight:900;line-height:.8;color:rgba(255,255,255,.018);letter-spacing:-.08em;pointer-events:none}
+.fig-note { font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; margin-top: 10px; }
+.funnel-step.gold { border-color: var(--border-gold); background: rgba(212,175,55,0.08); }
+.stat-inline span, .funnel-step span { display: block; }
 
-.slide{filter:blur(7px);transform:translate3d(0,18px,0) scale(.992);transition:
-  opacity .42s ease,transform .58s cubic-bezier(.16,1,.3,1),filter .42s ease}
-.slide.active{filter:blur(0);transform:translate3d(0,0,0) scale(1)}
-.slide.active .slide-eyebrow{animation:impactEnter .62s .03s both cubic-bezier(.16,1,.3,1)}
-.slide.active .slide-title{animation:impactEnter .72s .08s both cubic-bezier(.16,1,.3,1)}
-.slide.active .slide-lede{animation:impactEnter .76s .13s both cubic-bezier(.16,1,.3,1)}
-.slide.active .slide-body>*{animation:impactEnter .72s both cubic-bezier(.16,1,.3,1)}
-.slide.active .slide-body>*:nth-child(1){animation-delay:.16s}.slide.active .slide-body>*:nth-child(2){animation-delay:.21s}
-.slide.active .slide-body>*:nth-child(3){animation-delay:.26s}.slide.active .slide-body>*:nth-child(4){animation-delay:.31s}
-@keyframes impactEnter{from{opacity:0;transform:translateY(20px) scale(.985)}to{opacity:1;transform:none}}
+.grupo-badge { background: rgba(212, 175, 55, 0.12); border: 1px solid rgba(212, 175, 55, 0.3); color: var(--accent-gold-light); padding: 2px 8px; border-radius: 4px; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; }
+.entendimento-corresp { font-size: 0.76rem; color: var(--text-secondary); line-height: 1.45; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 8px; }
+.entendimento-corresp strong { color: var(--text-main); }
 
-.info-card,.stats-card,.kpi-card,.highlight-box,.entendimento-card,.timeline-item,.expand,.table-responsive-wrapper{
-  background:linear-gradient(145deg,rgba(28,28,34,.88),rgba(18,18,23,.9));
-  border-color:rgba(255,255,255,.105);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
-  box-shadow:0 10px 32px rgba(0,0,0,.2),inset 0 1px rgba(255,255,255,.025)}
-.info-card,.stats-card,.kpi-card,.entendimento-card{position:relative;overflow:hidden}
-.info-card:before,.stats-card:before,.entendimento-card:before{content:"";position:absolute;left:0;right:0;top:0;height:1px;
-  background:linear-gradient(90deg,transparent,rgba(212,175,55,.52),transparent);opacity:.44}
-.info-card:hover,.stats-card:hover,.kpi-card:hover,.entendimento-card:hover{
-  border-color:rgba(212,175,55,.36);box-shadow:0 18px 44px rgba(0,0,0,.42),0 0 22px rgba(212,175,55,.07);
-  transform:translateY(-3px)}
-.highlight-box{border-color:rgba(212,175,55,.32);box-shadow:0 16px 50px rgba(0,0,0,.3),0 0 36px rgba(212,175,55,.06)}
-.impact-kpis .kpi-card{min-height:112px}
-.perception-card{border-color:rgba(212,175,55,.24)}
+.q-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 16px 18px; box-shadow: var(--shadow-card); position: relative; }
+.q-card .q-num { position: absolute; top: 14px; right: 16px; font-size: 0.72rem; font-weight: 800; color: var(--accent-gold-light); background: rgba(212,175,55,0.12); border: 1px solid var(--border-gold); border-radius: 6px; padding: 1px 8px; }
+.q-card .q-text { font-size: 0.9rem; font-weight: 700; color: #fff; line-height: 1.4; margin: 0 44px 12px 0; }
+.q-count { font-size: 2rem; font-weight: 800; color: var(--accent-gold-light); line-height: 1.1; }
+.q-count span { font-size: 0.8rem; font-weight: 600; color: var(--text-secondary); }
+.q-note { font-size: 0.84rem; color: #d4d4d8; margin-top: 8px; }
+.survey-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); }
 
-.progress-rail{background:rgba(255,255,255,.045);height:4px}
-.progress-fill{box-shadow:0 0 18px rgba(212,175,55,.75)}
-header,.deck-nav{background:rgba(10,10,13,.78);backdrop-filter:blur(24px) saturate(140%);-webkit-backdrop-filter:blur(24px) saturate(140%)}
-.deck-nav{box-shadow:0 -12px 36px rgba(0,0,0,.28)}
-.deck-dot{box-shadow:0 0 0 rgba(212,175,55,0)}
-.deck-dot.active{box-shadow:0 0 14px rgba(212,175,55,.7)}
-.deck-nav-btn.primary{position:relative;overflow:hidden}
-.deck-nav-btn.primary:before{content:"";position:absolute;inset:-2px auto -2px -45%;width:38%;transform:skewX(-20deg);
-  background:linear-gradient(90deg,transparent,rgba(255,255,255,.58),transparent);animation:impactButtonSheen 4.8s ease-in-out infinite}
-@keyframes impactButtonSheen{0%,68%{left:-45%}85%,100%{left:125%}}
+.tag-item.static { cursor: default; }
+.k-label + .plain-list { margin-top: 8px; }
+.timeline-content h4 { overflow-wrap: anywhere; }
+.info-card p { overflow-wrap: anywhere; }
+details.expand { margin-top: 12px; }
+details.expand .expand-body p + p { margin-top: 10px; }
 
-@media(max-width:768px){
-  .ambient-grid{opacity:.08}.ambient-orb{filter:blur(44px);opacity:.12}
-  .slide:after{font-size:6rem;right:18px;bottom:68px}
-  .cover-slide .slide-inner:before{width:300px}.cover-slide .slide-inner:after{width:220px}
-  .info-card:hover,.stats-card:hover,.kpi-card:hover,.entendimento-card:hover{transform:none}
-}
-@media(prefers-reduced-motion:reduce){
-  .ambient-grid,.ambient-orb,.cover-badge,.cover-title,.splash-logo-container:before,.splash-logo-container:after,
-  .cover-slide .slide-inner:before,.cover-slide .slide-inner:after,.deck-nav-btn.primary:before{animation:none!important}
-  .slide,.slide.active,.slide.active .slide-eyebrow,.slide.active .slide-title,.slide.active .slide-lede,.slide.active .slide-body>*{
-    transition:none!important;animation:none!important;filter:none!important;transform:none!important}
+noscript .noscript-note { display: block; padding: 12px 16px; color: #fff; background: #222; }
+
+@media print {
+  html, body { height: auto !important; overflow: visible !important; background: #fff !important; color: #000 !important; display: block !important; }
+  #main-app { display: block !important; height: auto !important; opacity: 1 !important; transform: none !important; }
+  .splash-screen, header, .progress-rail, .deck-nav { display: none !important; }
+  .deck { overflow: visible !important; position: static !important; background: #fff !important; }
+  .slide { position: static !important; opacity: 1 !important; visibility: visible !important; transform: none !important; page-break-after: always; display: block !important; }
+  .slide-inner { overflow: visible !important; max-width: none !important; }
+  .slide-title, .kpi-value, .info-card h4, .timeline-content h4, .entendimento-tema, .q-card .q-text, .stats-card-title { color: #000 !important; }
+  .info-card, .stats-card, .kpi-card, .entendimento-card, .q-card, .strategy-card, .highlight-box { background: #fff !important; border: 1px solid #999 !important; box-shadow: none !important; color: #000 !important; }
+  p, li, td, th, span, div { color: #000 !important; }
+  .bar-fill { background: #555 !important; }
+  details.expand > .expand-body { display: block !important; }
 }
 
+.cover-title { font-size: clamp(1.6rem, 5vw, 2.8rem); }
+.cover-subtitle { font-size: clamp(1.05rem, 2.6vw, 1.5rem); color: var(--accent-gold-light); font-weight: 600; }
+.brand-h { font-size: clamp(0.82rem, 1.9vw, 0.98rem); font-weight: 700; color: #fff; letter-spacing: -0.01em; line-height: 1.25; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.prose { font-size: 0.92rem; color: #d4d4d8; line-height: 1.7; }
+.slide-lede::first-letter { text-transform: uppercase; }
+.info-card p::first-letter, .fig-note::first-letter, .bar-header span::first-letter, .expand-body p::first-letter,
+.prose::first-letter, .highlight-box p::first-letter, .entendimento-quote::first-letter, .q-note::first-letter { text-transform: uppercase; }
+.stats-card .fig-note { margin: 10px 0; }
+.stats-card .prose { margin-top: 10px; }
+.stat-inline-row { margin: 10px 0; }
+.strategy-card.recover, .strategy-card.shield { background: linear-gradient(155deg, rgba(212,175,55,0.09), var(--bg-card) 60%); border-color: rgba(212,175,55,0.3); }
+.k-label.sub { margin: 14px 0 8px; }
+.tag-item { display: inline-block; }
+.tag-item::first-letter, .plain-list li::first-letter, .flow-branch::first-letter, .flow-node::first-letter,
+.stats-card-title::first-letter, .stat-inline span::first-letter, .funnel-step span::first-letter,
+.axis-card .ax-t::first-letter, .step-txt::first-letter, .kpi-label::first-letter { text-transform: uppercase; }
 </style>
+<noscript><style>
+html, body { height: auto; }
+body { display: block; overflow: auto; }
+#main-app { opacity: 1; transform: none; height: auto; display: block; }
+.splash-screen, .deck-nav, .progress-rail { display: none; }
+.deck { overflow: visible; position: static; }
+.slide { position: static; opacity: 1; visibility: visible; transform: none; display: block; border-bottom: 1px solid #333; }
+.slide-inner { overflow: visible; }
+</style></noscript>
 </head>
 <body>
-  <div class="ambient-scene" aria-hidden="true">
-    <div class="ambient-grid"></div>
-    <div class="ambient-orb orb-one"></div>
-    <div class="ambient-orb orb-two"></div>
-    <div class="ambient-orb orb-three"></div>
-  </div>
 
   <!-- ABERTURA ANIMADA: BRASÃO DA POLÍCIA FEDERAL -->
   <div id="splashScreen" class="splash-screen" onclick="skipSplash()">
@@ -737,9 +724,10 @@ header,.deck-nav{background:rgba(10,10,13,.78);backdrop-filter:blur(24px) satura
       </div>
       <div class="splash-titles">
         <div class="splash-dept">Polícia Federal</div>
-        <div class="splash-subdept">Corregedoria-Geral · Coordenação-Geral de Disciplina</div>
-        <h1 class="splash-main-title">Relatório de Execução e Resultados — Encontro de Alinhamento Técnico da Área Disciplinar 2026</h1>
-        <div class="splash-location">Academia Nacional de Polícia · Brasília/DF · 08 a 11 de setembro de 2026</div>
+        <div class="splash-subdept">Corregedoria-Geral da Polícia Federal · Coordenação-Geral de Disciplina</div>
+        <h1 class="splash-main-title">Encontro de Alinhamento Técnico da Área Disciplinar — 2026</h1>
+        <div class="splash-location">Relatório de Execução e Resultados</div>
+        <div class="splash-location">Academia Nacional de Polícia · Brasília-DF · 8 a 11 de setembro de 2026</div>
       </div>
       <div class="splash-progress-track"><div class="splash-progress-bar"></div></div>
     </div>
@@ -752,23 +740,19 @@ header,.deck-nav{background:rgba(10,10,13,.78);backdrop-filter:blur(24px) satura
     <header>
       <div class="header-container">
         <div class="brand-section">
-          <img src="assets/logo-pf.png" alt="Brasão PF" class="header-pf-badge">
+          <img src="assets/logo-pf.png" alt="Brasão da Polícia Federal" class="header-pf-badge">
           <div class="brand-titles">
-            <div class="dept-tag">COGER · CGDIS · Relatório de Execução</div>
-            <h1>Alinhamento Técnico da Área Disciplinar — 2026</h1>
+            <div class="dept-tag">Corregedoria-Geral da Polícia Federal · Relatório de Execução e Resultados</div>
+            <div class="brand-h">Encontro de Alinhamento Técnico da Área Disciplinar — 2026</div>
           </div>
         </div>
         <div class="header-actions-group">
-          <button class="icon-btn ghost fullscreen-btn" onclick="toggleFullscreen()" title="Apresentação em tela cheia">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3M16 3h3a2 2 0 0 1 2 2v3M8 21H5a2 2 0 0 1-2-2v-3M16 21h3a2 2 0 0 0 2-2v-3"/></svg>
-            <span class="lbl">Tela cheia</span>
-          </button>
-          <button class="icon-btn ghost" onclick="goToSlide(2)" title="Ir ao roteiro">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+          <button class="icon-btn ghost" data-go="2" title="Ir ao roteiro">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
             <span class="lbl">Roteiro</span>
           </button>
           <button class="icon-btn" onclick="replaySplash()" title="Repetir abertura animada">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
             <span class="lbl">Abertura</span>
           </button>
         </div>
@@ -777,273 +761,271 @@ header,.deck-nav{background:rgba(10,10,13,.78);backdrop-filter:blur(24px) satura
 
     <div class="progress-rail"><div class="progress-fill" id="progressFill"></div></div>
 
-    <div class="deck" id="deck">
+    <main class="deck" id="deck">
 
-      <!-- ============================= SLIDE 1 — CAPA ============================= -->
-      <section class="slide cover-slide active" data-slide="1" id="slide-1">
+      <!-- 1 CAPA -->
+      <section class="slide cover-slide active" data-slide="1" id="slide-1" aria-label="Capa">
         <div class="slide-inner">
           <img src="assets/logo-pf.png" alt="Brasão da Polícia Federal" class="cover-badge">
-          <div class="cover-org">Corregedoria-Geral da Polícia Federal · Coordenação-Geral de Disciplina</div>
-          <h1 class="cover-title">Relatório de Execução e Resultados</h1>
-          <div class="cover-subtitle">Encontro de Alinhamento Técnico da Área Disciplinar — 2026</div>
+          <div class="cover-org">Polícia Federal · Corregedoria-Geral da Polícia Federal · Coordenação-Geral de Disciplina</div>
+          <h1 class="cover-title">Encontro de Alinhamento Técnico da Área Disciplinar — 2026</h1>
+          <div class="cover-subtitle">Relatório de Execução e Resultados</div>
           <div class="cover-meta">
-            <span class="meta-chip"><strong>08 a 11/09/2026</strong> · Academia Nacional de Polícia</span>
-            <span class="meta-chip">Brasília/DF</span>
-            <span class="meta-chip">4 dias · 22 blocos · 11 entendimentos</span>
+            <span class="meta-chip"><strong>8 a 11 de setembro de 2026</strong></span>
+            <span class="meta-chip">Academia Nacional de Polícia · Brasília-DF</span>
+            <span class="meta-chip">quatro dias · 22 blocos de atividade · onze entendimentos técnicos</span>
           </div>
           <div class="cover-hint">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             Deslize ou toque em Avançar para iniciar
           </div>
         </div>
       </section>
 
-      <!-- ============================= SLIDE 2 — ROTEIRO ============================= -->
-      <section class="slide" data-slide="2" id="slide-2">
+      <!-- 2 ROTEIRO -->
+      <section class="slide" data-slide="2" id="slide-2" aria-label="Roteiro">
         <div class="slide-inner">
           <div class="slide-eyebrow"><span class="num">Roteiro</span></div>
-          <h2 class="slide-title">O que você vai ver nesta apresentação</h2>
-          <p class="slide-lede">Toque em qualquer item para ir direto à tela correspondente. Você também pode navegar com as setas do teclado, arrastando o dedo na tela ou pelos botões no rodapé.</p>
+          <h2 class="slide-title">Navegue pelas telas</h2>
+          <p class="slide-lede">Toque em qualquer item para ir direto à tela correspondente. Você também pode usar as setas do teclado, arrastar o dedo na tela ou os botões do rodapé. Os números "Seção" e "Anexo" seguem a numeração do relatório.</p>
           <div class="slide-body">
             <div class="agenda-group">
               <div class="agenda-group-title">Execução do encontro</div>
               <div class="agenda-pill-grid">
-                <button class="agenda-pill" onclick="goToSlide(3)"><span class="num">03</span> Apresentação &amp; objetivos</button>
-                <button class="agenda-pill" onclick="goToSlide(4)"><span class="num">04</span> O encontro em números</button>
-                <button class="agenda-pill" onclick="goToSlide(5)"><span class="num">05</span> Programação dia a dia</button>
-                <button class="agenda-pill" onclick="goToSlide(6)"><span class="num">06</span> Eixos temáticos</button>
+                <button class="agenda-pill" data-go="3"><span class="num">03</span> Apresentação</button>
+                <button class="agenda-pill" data-go="4"><span class="num">04</span> Objeto, escopo e finalidade</button>
+                <button class="agenda-pill" data-go="5"><span class="num">05</span> Síntese executiva</button>
+                <button class="agenda-pill" data-go="6"><span class="num">06</span> Principais eixos temáticos</button>
+                <button class="agenda-pill" data-go="7"><span class="num">07</span> Execução do encontro</button>
               </div>
             </div>
             <div class="agenda-group">
-              <div class="agenda-group-title">Diagnóstico &amp; gestão do estoque</div>
+              <div class="agenda-group-title">Diagnóstico e gestão do estoque</div>
               <div class="agenda-pill-grid">
-                <button class="agenda-pill" onclick="goToSlide(7)"><span class="num">07</span> Estoque de PADs</button>
-                <button class="agenda-pill" onclick="goToSlide(8)"><span class="num">08</span> Estoque por ano</button>
-                <button class="agenda-pill" onclick="goToSlide(9)"><span class="num">09</span> Estratégia &amp; painéis RDF/IPS</button>
+                <button class="agenda-pill" data-go="8"><span class="num">08</span> Diagnóstico do estoque disciplinar</button>
+                <button class="agenda-pill" data-go="9"><span class="num">09</span> Estoque ativo por ano</button>
+                <button class="agenda-pill" data-go="10"><span class="num">10</span> Estratégia e painéis RDF/IPS</button>
               </div>
             </div>
             <div class="agenda-group">
-              <div class="agenda-group-title">Conteúdo técnico</div>
+              <div class="agenda-group-title">Principais resultados técnicos</div>
               <div class="agenda-pill-grid">
-                <button class="agenda-pill" onclick="goToSlide(10)"><span class="num">10</span> Admissibilidade</button>
-                <button class="agenda-pill" onclick="goToSlide(11)"><span class="num">11</span> Tipificação e prescrição</button>
-                <button class="agenda-pill" onclick="goToSlide(12)"><span class="num">12</span> Dosimetria</button>
-                <button class="agenda-pill" onclick="goToSlide(13)"><span class="num">13</span> Sigilo e proteção de dados</button>
-                <button class="agenda-pill" onclick="goToSlide(14)"><span class="num">14</span> Termo de Ajustamento de Conduta</button>
-                <button class="agenda-pill" onclick="goToSlide(15)"><span class="num">15</span> Acidentes com viaturas</button>
+                <button class="agenda-pill" data-go="11"><span class="num">11</span> Admissibilidade</button>
+                <button class="agenda-pill" data-go="12"><span class="num">12</span> Tipificação, indiciamento e prescrição</button>
+                <button class="agenda-pill" data-go="13"><span class="num">13</span> Dosimetria</button>
+                <button class="agenda-pill" data-go="14"><span class="num">14</span> Acesso, sigilo e proteção</button>
+                <button class="agenda-pill" data-go="15"><span class="num">15</span> Termo de Ajustamento de Conduta</button>
+                <button class="agenda-pill" data-go="16"><span class="num">16</span> Acidentes com viaturas</button>
+                <button class="agenda-pill" data-go="17"><span class="num">17</span> Casos das CPDs</button>
+                <button class="agenda-pill" data-go="18"><span class="num">18</span> Boas práticas e temas recorrentes</button>
               </div>
             </div>
             <div class="agenda-group">
-              <div class="agenda-group-title">Casos &amp; consolidação</div>
+              <div class="agenda-group-title">Entendimentos e avaliação</div>
               <div class="agenda-pill-grid">
-                <button class="agenda-pill" onclick="goToSlide(16)"><span class="num">16</span> Casos das CPDs</button>
-                <button class="agenda-pill" onclick="goToSlide(17)"><span class="num">17</span> Boas práticas</button>
-                <button class="agenda-pill" onclick="goToSlide(18)"><span class="num">18</span> Os onze entendimentos</button>
+                <button class="agenda-pill" data-go="19"><span class="num">19</span> Os onze entendimentos</button>
+                <button class="agenda-pill" data-go="20"><span class="num">20</span> Avaliação e resultados</button>
+                <button class="agenda-pill" data-go="21"><span class="num">21</span> Resultados do formulário</button>
+                <button class="agenda-pill" data-go="22"><span class="num">22</span> Aprofundamento futuro</button>
               </div>
             </div>
             <div class="agenda-group">
-              <div class="agenda-group-title">Resultados</div>
+              <div class="agenda-group-title">Fechamento</div>
               <div class="agenda-pill-grid">
-                <button class="agenda-pill" onclick="goToSlide(19)"><span class="num">19</span> Avaliação do encontro</button>
-                <button class="agenda-pill" onclick="goToSlide(20)"><span class="num">20</span> Temas para aprofundar</button>
-                <button class="agenda-pill" onclick="goToSlide(21)"><span class="num">21</span> Conclusão</button>
-                <button class="agenda-pill" onclick="goToSlide(22)"><span class="num">22</span> Encerramento</button>
+                <button class="agenda-pill" data-go="23"><span class="num">23</span> Conclusão</button>
+                <button class="agenda-pill" data-go="24"><span class="num">24</span> Dados quantitativos complementares</button>
+                <button class="agenda-pill" data-go="25"><span class="num">25</span> Encerramento</button>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ============================= SLIDE 3 — APRESENTAÇÃO ============================= -->
-      <section class="slide" data-slide="3" id="slide-3">
+      <!-- 3 APRESENTAÇÃO -->
+      <section class="slide" data-slide="3" id="slide-3" aria-label="Apresentação">
         <div class="slide-inner">
-          <div class="slide-eyebrow"><span class="num">01</span> Apresentação</div>
-          <h2 class="slide-title">Um espaço de integração técnica e uniformização</h2>
-          <p class="slide-lede">A Corregedoria-Geral da Polícia Federal, por intermédio da Coordenação-Geral de Disciplina, realizou entre 8 e 11 de setembro de 2026, na Academia Nacional de Polícia, em Brasília-DF, o Encontro de Alinhamento Técnico da Área Disciplinar — 2026: exposições temáticas, apresentação de casos, debates técnico-jurídicos e consolidação de entendimentos sobre matérias relevantes para a atividade correcional.</p>
-          <div class="slide-body">
-            <div class="info-card">
-              <div class="k-label">Objetivos do encontro</div>
-              <div class="chip-row">
-                <span class="tag-item">Uniformizar procedimentos entre unidades</span>
-                <span class="tag-item">Intercambiar experiências entre NUDIS e CPDs</span>
-                <span class="tag-item">Aperfeiçoar a gestão técnica da atividade disciplinar</span>
-                <span class="tag-item">Tratar matérias com interpretações divergentes</span>
-                <span class="tag-item">Discutir casos concretos apresentados pelas CPDs</span>
-                <span class="tag-item">Alinhar procedimentos entre estruturas</span>
-                <span class="tag-item">Aprimorar a gestão de PADs, RDFs e IPS a partir de diagnóstico</span>
-              </div>
-            </div>
-            <div class="info-card">
-              <h4>🔒 Proteção de dados pessoais</h4>
-              <p>Por proteção de dados pessoais, este material não reproduz nomes de pessoas envolvidas em casos disciplinares, números de processo, matrículas, placas ou contatos pessoais, nem os nomes dos participantes que responderam à avaliação pós-encontro. Mantêm-se os nomes funcionais de autoridades, expositores, mediadores e responsáveis institucionais.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ============================= SLIDE 4 — EM NÚMEROS ============================= -->
-      <section class="slide" data-slide="4" id="slide-4">
-        <div class="slide-inner">
-          <div class="slide-eyebrow"><span class="num">02</span> Síntese executiva</div>
-          <h2 class="slide-title">O encontro em números</h2>
-          <p class="slide-lede">Elementos de síntese do planejamento e da execução — não constituem indicadores de desempenho.</p>
-          <div class="slide-body">
-            <div class="kpi-grid">
-              <div class="kpi-card"><div class="kpi-label">Dias de programação</div><div class="kpi-value">4</div><div class="kpi-sub">08 a 11 de setembro</div></div>
-              <div class="kpi-card"><div class="kpi-label">Blocos de atividade</div><div class="kpi-value">22</div><div class="kpi-sub">recepção à encerramento</div></div>
-              <div class="kpi-card emerald"><div class="kpi-label">Entendimentos consolidados</div><div class="kpi-value">11</div><div class="kpi-sub">Seção 6 do relatório</div></div>
-              <div class="kpi-card silver"><div class="kpi-label">Núcleos + CPDs</div><div class="kpi-value">27 + 11</div><div class="kpi-sub">contemplados no planejamento</div></div>
-              <div class="kpi-card"><div class="kpi-label">Pessoas estimadas</div><div class="kpi-value">74</div><div class="kpi-sub">incluindo coordenação</div></div>
-              <div class="kpi-card"><div class="kpi-label">CPDs com casos detalhados</div><div class="kpi-value">6 / 11</div><div class="kpi-sub">materiais de base enviados</div></div>
-              <div class="kpi-card rose"><div class="kpi-label">Estoque ativo de PADs</div><div class="kpi-value">155</div><div class="kpi-sub">diagnóstico apresentado</div></div>
-              <div class="kpi-card"><div class="kpi-label">Palestra institucional</div><div class="kpi-value">1</div><div class="kpi-sub">Corregedora-Geral, DPF Aletea Marona Kunde</div></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ============================= SLIDE 5 — PROGRAMAÇÃO ============================= -->
-      <section class="slide" data-slide="5" id="slide-5">
-        <div class="slide-inner">
-          <div class="slide-eyebrow"><span class="num">03</span> Execução</div>
-          <h2 class="slide-title">Programação executada — dia a dia</h2>
-          <p class="slide-lede">Consulte os blocos de cada dia. Horários e responsáveis conforme a programação consolidada (Anexo I do relatório).</p>
-          <div class="slide-body">
-            <div class="day-tab-track">
-              <button class="day-tab active" onclick="setDay(1,this)">Dia 1 · 08/09 Terça</button>
-              <button class="day-tab" onclick="setDay(2,this)">Dia 2 · 09/09 Quarta</button>
-              <button class="day-tab" onclick="setDay(3,this)">Dia 3 · 10/09 Quinta</button>
-              <button class="day-tab" onclick="setDay(4,this)">Dia 4 · 11/09 Sexta</button>
-            </div>
-
-            <div class="day-panel active" data-day="1">
-              <div class="timeline">
-                <div class="timeline-item"><div class="timeline-time"><span class="time-badge">14h00</span></div><div class="timeline-content"><h4>Recepção dos servidores</h4><p>Recepção dos participantes — DPF Luciana Caires.</p></div></div>
-                <div class="timeline-item"><div class="timeline-time"><span class="time-badge">14h20–15h00</span></div><div class="timeline-content"><h4>Abertura do evento</h4><p>DPF Luciana Caires.</p></div></div>
-                <div class="timeline-item"><div class="timeline-time"><span class="time-badge">15h00–15h40</span></div><div class="timeline-content"><h4>Alinhamento técnico da área disciplinar</h4><p>DPF Luciana Caires · diagnóstico do estoque de processos, proposta de metodologia de gestão orientada por dados e objetivos gerais do encontro.</p></div></div>
-                <div class="timeline-item"><div class="timeline-time"><span class="time-badge">15h40–16h20</span></div><div class="timeline-content"><h4>Admissibilidade e Instauração</h4><p>DPF Fabrício de Souza Costa · Registro de Fato Disciplinar como filtro inicial e fluxo de admissibilidade.</p></div></div>
-                <div class="timeline-item"><div class="timeline-time"><span class="time-badge">16h40–18h00</span></div><div class="timeline-content"><h4>Apresentação de casos — 1ª a 3ª CPDs</h4><p>Mediação: DPF Clyton Eustáquio Xavier · oitivas por videoconferência (1ª CPD); incidente de sanidade (2ª CPD); assédio sexual (3ª CPD).</p></div></div>
-              </div>
-            </div>
-
-            <div class="day-panel" data-day="2">
-              <div class="timeline">
-                <div class="timeline-item"><div class="timeline-time"><span class="time-badge">09h00–09h40</span></div><div class="timeline-content"><h4>Tipificação e Responsabilização</h4><p>DPF Michael Assis Fagundes · requisitos do tipo disciplinar da Lei nº 15.047/2024 e aplicação subsidiária da Lei nº 8.112/1990.</p></div></div>
-                <div class="timeline-item"><div class="timeline-time"><span class="time-badge">09h40–10h20</span></div><div class="timeline-content"><h4>Casos — 4ª e 5ª CPDs</h4><p>Mediação Clyton E. Xavier · aplicação da IN nº 264/2023 (4ª CPD); acidente com viatura e descumprimento de TAC (5ª CPD).</p></div></div>
-                <div class="timeline-item"><div class="timeline-time"><span class="time-badge">10h40–12h00</span></div><div class="timeline-content"><h4>Casos — 6ª a 8ª CPDs</h4><p>Mediação Clyton E. Xavier · requisição do MPF (6ª CPD); atividade compatível (7ª CPD); atividade incompatível (8ª CPD).</p></div></div>
-                <div class="timeline-item"><div class="timeline-time"><span class="time-badge">14h00–14h40</span></div><div class="timeline-content"><h4>Acesso, Sigilo e Proteção das Informações</h4><p>DPF Ricardo Amaral Castro Ferreira · critérios de acesso ao PAD, LAI e LGPD.</p></div></div>
-                <div class="timeline-item"><div class="timeline-time"><span class="time-badge">14h40–15h20</span></div><div class="timeline-content"><h4>Dosimetria da Pena Disciplinar</h4><p>DPF Rosinete de Santana Barbosa · sistema trifásico de dosimetria.</p></div></div>
-                <div class="timeline-item"><div class="timeline-time"><span class="time-badge">15h20–16h00</span></div><div class="timeline-content"><h4>Desenvolvimento do ePOL Disciplinar — SAD</h4><p>EPF Rafael Campos de Azevedo Lucindo.</p></div></div>
-                <div class="timeline-item"><div class="timeline-time"><span class="time-badge">16h20–18h00</span></div><div class="timeline-content"><h4>Casos — 9ª a 11ª CPDs</h4><p>Mediação Clyton E. Xavier · incidente de sanidade (9ª CPD); missão no exterior (10ª CPD); atividade paralela à função policial (11ª CPD).</p></div></div>
-              </div>
-            </div>
-
-            <div class="day-panel" data-day="3">
-              <div class="timeline">
-                <div class="timeline-item"><div class="timeline-time"><span class="time-badge">09h00–09h40</span></div><div class="timeline-content"><h4>Indiciamento e Prescrição Administrativa Disciplinar</h4><p>DPF Rosinete de Santana Barbosa.</p></div></div>
-                <div class="timeline-item"><div class="timeline-time"><span class="time-badge">09h40–10h20</span></div><div class="timeline-content"><h4>Acidentes Envolvendo Viaturas Policiais</h4><p>DPF Alexandre Camões Bessa.</p></div></div>
-                <div class="timeline-item extra"><div class="timeline-time"><span class="time-badge">10h20–10h40</span></div><div class="timeline-content"><h4>Recusa de flagrantes de tráfico de drogas</h4><p>DPF Custódio, CGPRE · sem repercussão transnacional.</p></div></div>
-                <div class="timeline-item"><div class="timeline-time"><span class="time-badge">10h40–12h00</span></div><div class="timeline-content"><h4>Discussão de Pontos Específicos e Alteração da Legislação Disciplinar</h4><p>DPF Clyton Eustáquio Xavier · bloco de maior densidade de debate, correspondente a nove dos onze entendimentos consolidados.</p></div></div>
-                <div class="timeline-item extra"><div class="timeline-time"><span class="time-badge">14h00</span></div><div class="timeline-content"><h4>Palestra de orientação</h4><p>Corregedora-Geral, DPF Aletea Marona Kunde.</p></div></div>
-                <div class="timeline-item"><div class="timeline-time"><span class="time-badge">14h10–14h40</span></div><div class="timeline-content"><h4>Celebração de Termos de Ajustamento de Conduta</h4><p>DPF Graziele Alessandra Soares Araújo Fonseca e DPF Roberto Rubem Ribeiro.</p></div></div>
-                <div class="timeline-item"><div class="timeline-time"><span class="time-badge">14h40–15h20</span></div><div class="timeline-content"><h4>Prevenção e Gestão</h4><p>DPF Fernanda Camargo.</p></div></div>
-                <div class="timeline-item"><div class="timeline-time"><span class="time-badge">15h20–16h00</span></div><div class="timeline-content"><h4>Boas Práticas Disciplinares</h4><p>DPF Clyton Eustáquio Xavier.</p></div></div>
-                <div class="timeline-item"><div class="timeline-time"><span class="time-badge">16h40–18h00</span></div><div class="timeline-content"><h4>Temas Jurídicos Recorrentes</h4><p>Mediação: DPF Luciana Caires e DPF Clyton Eustáquio Xavier · encerramento temático associado à consolidação dos entendimentos.</p></div></div>
-              </div>
-            </div>
-
-            <div class="day-panel" data-day="4">
-              <div class="timeline">
-                <div class="timeline-item"><div class="timeline-time"><span class="time-badge">09h00–09h40</span></div><div class="timeline-content"><h4>Improbidade Administrativa — Entendimento PF</h4><p>DPF Thiago de Araújo Marques.</p></div></div>
-                <div class="timeline-item"><div class="timeline-time"><span class="time-badge">09h40–10h20</span></div><div class="timeline-content"><h4>Registro dos Enunciados Temáticos</h4><p>Consolidação dos temas e entendimentos tratados ao longo do encontro — os onze entendimentos técnicos.</p></div></div>
-                <div class="timeline-item"><div class="timeline-time"><span class="time-badge">10h40–12h00</span></div><div class="timeline-content"><h4>Encerramento</h4><p>Conduzido pela Corregedora-Geral substituta, DPF Fernanda Camargo.</p></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ============================= SLIDE 6 — EIXOS TEMÁTICOS ============================= -->
-      <section class="slide" data-slide="6" id="slide-6">
-        <div class="slide-inner">
-          <div class="slide-eyebrow"><span class="num">04</span> Execução</div>
-          <h2 class="slide-title">Eixos temáticos do encontro</h2>
-          <p class="slide-lede">A esses eixos somaram-se a apresentação de casos concretos pelas onze Comissões Permanentes de Disciplina e espaços dedicados à consolidação de entendimentos.</p>
+          <div class="slide-eyebrow"><span class="num">Seção 1</span></div>
+          <h2 class="slide-title">Apresentação</h2>
+          <p class="slide-lede">A Corregedoria-Geral da Polícia Federal, por intermédio da Coordenação-Geral de Disciplina, realizou, entre os dias 8 e 11 de setembro de 2026, na Academia Nacional de Polícia, em Brasília-DF, o Encontro de Alinhamento Técnico da Área Disciplinar — 2026.</p>
           <div class="slide-body">
             <div class="card-grid">
-              <div class="info-card"><h4>📊 Diagnóstico e gestão do estoque</h4><p>Processos administrativos disciplinares — dados, prazos e estratégia de recuperação.</p></div>
-              <div class="info-card"><h4>🚪 Admissibilidade e fluxo de entrada</h4><p>RDF, IPS, PAD e TAC como desfechos do juízo de admissibilidade.</p></div>
-              <div class="info-card"><h4>⚖️ Tipificação, indiciamento e prescrição</h4><p>Requisitos do tipo disciplinar, delimitação da acusação e prazos prescricionais.</p></div>
-              <div class="info-card"><h4>📐 Dosimetria da pena</h4><p>Sistema trifásico e régua de graus e penalidades.</p></div>
-              <div class="info-card"><h4>🔒 Acesso, sigilo e proteção de informações</h4><p>Critérios de acesso ao PAD conforme o interessado; LAI e LGPD.</p></div>
-              <div class="info-card"><h4>🤝 Termo de Ajustamento de Conduta</h4><p>Requisitos, estrutura e efeitos do TAC.</p></div>
-              <div class="info-card"><h4>🚓 Acidentes envolvendo viaturas</h4><p>Fluxo operacional e individualização de responsabilidades.</p></div>
-              <div class="info-card"><h4>📚 Boas práticas e temas jurídicos recorrentes</h4><p>Pontos específicos, alteração legislativa e casuística cartorária.</p></div>
+              <div class="info-card"><p>O encontro foi concebido como espaço de integração técnica, uniformização de procedimentos e intercâmbio de experiências entre as unidades que atuam na área disciplinar, reunindo exposições temáticas, apresentação de casos, debates técnico-jurídicos e consolidação de entendimentos sobre matérias relevantes para a atividade disciplinar.</p></div>
+              <div class="info-card"><p>De caráter presencial, o encontro foi planejado para reunir, ao longo de quatro dias, representantes dos 27 Núcleos de Disciplina e das 11 Comissões Permanentes de Disciplina (CPDs) da Polícia Federal, contemplando chefias, presidências, membros e secretarias das comissões, além da equipe de coordenação. A programação foi distribuída em 22 blocos de atividade, combinando recepção, abertura, exposições técnicas, apresentação de casos pelas CPDs, discussões temáticas e encerramento.</p></div>
+            </div>
+            <div class="info-card"><p>Os temas tratados ao longo do encontro abrangeram as principais etapas e instrumentos da atividade disciplinar: admissibilidade e Registro de Fato Disciplinar, tipificação e responsabilização, indiciamento, prescrição, dosimetria da pena, acesso e sigilo de informações, acidentes envolvendo viaturas, Termo de Ajustamento de Conduta e boas práticas cartorárias, além de blocos destinados à apresentação de casos pelas Comissões Permanentes de Disciplina e da discussão de pontos específicos e alterações da legislação disciplinar.</p></div>
+            <details class="expand"><summary>Continuar a leitura da apresentação</summary>
+              <div class="expand-body">
+                <p>A programação foi orientada pela aproximação entre a discussão normativa e a realidade operacional das unidades: a apresentação de casos pelas CPDs permitiu associar os conteúdos jurídicos e procedimentais a situações concretas da condução de processos, possibilitando o compartilhamento de experiências entre unidades e regiões e a identificação de matérias sujeitas a interpretações divergentes.</p>
+                <p>Ao final do processo de discussão, foi consolidado um registro de onze entendimentos técnicos sobre temas recorrentes da atividade disciplinar, abrangendo desde a compatibilidade de atividades externas ao cargo até aspectos de sigilo, prescrição e procedimento, resultado que evidencia que o encontro não se limitou à transmissão de conteúdos, mas produziu também uma consolidação de posições técnicas relevantes para a uniformização da atuação disciplinar na instituição.</p>
+                <p>O presente relatório apresenta à alta administração os resultados desse encontro: a forma como foi executado, os conteúdos técnicos desenvolvidos, os debates promovidos, os entendimentos consolidados e os temas identificados para aprofundamento futuro.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4 OBJETO, ESCOPO E FINALIDADE -->
+      <section class="slide" data-slide="4" id="slide-4" aria-label="Objeto, escopo e finalidade">
+        <div class="slide-inner">
+          <div class="slide-eyebrow"><span class="num">Seção 2</span></div>
+          <h2 class="slide-title">Objeto, escopo e finalidade</h2>
+          <p class="slide-lede">Este relatório apresenta à alta administração a síntese da execução e dos resultados do Encontro de Alinhamento Técnico da Área Disciplinar — 2026, com destaque para os principais conteúdos desenvolvidos, os debates promovidos, os entendimentos técnicos consolidados e as questões identificadas para aprofundamento.</p>
+          <div class="slide-body">
+            <div class="info-card">
+              <div class="k-label">O encontro buscou, em conjunto</div>
+              <ul class="plain-list">
+                <li>promover a uniformização de procedimentos entre as unidades da área disciplinar</li>
+                <li>intercambiar experiências entre Núcleos de Disciplina e Comissões Permanentes de Disciplina</li>
+                <li>aperfeiçoar a atividade disciplinar, do ponto de vista técnico e de gestão</li>
+                <li>tratar matérias que vêm recebendo interpretações divergentes entre as unidades</li>
+                <li>discutir casos concretos apresentados pelas CPDs</li>
+                <li>alinhar procedimentos e entendimentos entre as diferentes estruturas</li>
+                <li>aprimorar a gestão dos processos disciplinares a partir do diagnóstico do estoque de PADs, RDFs e IPS apresentado no encontro</li>
+              </ul>
+            </div>
+            <div class="info-card">
+              <div class="k-label">Proteção de dados pessoais</div>
+              <p>Por proteção de dados pessoais, este relatório não reproduz nomes de pessoas envolvidas em casos disciplinares, números de processo, matrículas, placas ou contatos pessoais, nem os nomes dos participantes que responderam à avaliação realizada após o encontro. Mantêm-se os nomes funcionais de autoridades, expositores, mediadores e responsáveis institucionais.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ============================= SLIDE 7 — ESTOQUE DE PADs ============================= -->
-      <section class="slide" data-slide="7" id="slide-7">
+      <!-- 5 SÍNTESE EXECUTIVA -->
+      <section class="slide" data-slide="5" id="slide-5" aria-label="Síntese executiva">
         <div class="slide-inner">
-          <div class="slide-eyebrow"><span class="num">05</span> Diagnóstico</div>
-          <h2 class="slide-title">Diagnóstico do estoque de PADs</h2>
-          <p class="slide-lede">A área disciplinar está organizada em 27 Núcleos de Disciplina (atuação estadual) e 11 Comissões Permanentes de Disciplina (atuação regional).</p>
+          <div class="slide-eyebrow"><span class="num">Seção 3</span></div>
+          <h2 class="slide-title">Síntese executiva</h2>
+          <p class="slide-lede">O Encontro de Alinhamento Técnico da Área Disciplinar — 2026 foi realizado entre 8 e 11 de setembro de 2026, na Academia Nacional de Polícia, em Brasília-DF, reunindo, ao longo de quatro dias, representantes das estruturas da área disciplinar da Polícia Federal.</p>
+          <div class="slide-body">
+            <div class="kpi-grid">
+              <div class="kpi-card"><div class="kpi-label">dias de programação</div><div class="kpi-value">4</div></div>
+              <div class="kpi-card"><div class="kpi-label">blocos de atividade</div><div class="kpi-value">22</div></div>
+              <div class="kpi-card emerald"><div class="kpi-label">entendimentos técnicos consolidados</div><div class="kpi-value">11</div></div>
+              <div class="kpi-card silver"><div class="kpi-label">Núcleos de Disciplina e CPDs contemplados no planejamento</div><div class="kpi-value">27 + 11</div></div>
+              <div class="kpi-card"><div class="kpi-label">pessoas estimadas, incluindo a coordenação</div><div class="kpi-value">74</div></div>
+            </div>
+            <div class="kpi-grid">
+              <div class="kpi-card"><div class="kpi-label">Casos práticos e temas jurídicos recorrentes em debate</div></div>
+              <div class="kpi-card"><div class="kpi-label">Diagnóstico de estoque e gestão de procedimentos disciplinares</div></div>
+              <div class="kpi-card"><div class="kpi-label">Alinhamento de procedimentos e intercâmbio entre unidades</div></div>
+            </div>
+            <p class="fig-note">Elementos de síntese do encontro — não constituem indicadores de desempenho.</p>
+            <details class="expand"><summary>Ler a síntese executiva completa</summary>
+              <div class="expand-body">
+                <p>A programação consolidada compreendeu 22 blocos de atividade, distribuídos entre recepção, abertura, exposições técnicas, apresentação de casos pelas Comissões Permanentes de Disciplina, discussões temáticas e encerramento. O planejamento previu a participação de representantes dos 27 Núcleos de Disciplina e das 11 Comissões Permanentes de Disciplina, contemplando chefias, presidências, membros e secretarias das comissões, além da equipe de coordenação — no total, 74 pessoas estimadas, incluindo a coordenação.</p>
+                <p>Ao final do processo de debate, foram consolidados onze entendimentos técnicos sobre temas recorrentes da atividade disciplinar — de atividades externas ao cargo a aspectos de sigilo, prescrição e procedimento —, resultado central do encontro do ponto de vista da uniformização de procedimentos.</p>
+                <p>A avaliação realizada após o encontro registrou percepção geral positiva quanto à temática escolhida e à sua utilidade prática, destacando a troca de experiências entre unidades e regiões e a relevância da discussão de casos concretos. Ao mesmo tempo, indicou a necessidade de aprofundamento futuro de determinados temas — entre eles a casuística de TAC, acidentes e uso de viaturas, improbidade administrativa e o uso de inteligência artificial na gestão de procedimentos disciplinares —, em razão do volume e da complexidade dos conteúdos tratados no tempo disponível.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6 PRINCIPAIS EIXOS TEMÁTICOS -->
+      <section class="slide" data-slide="6" id="slide-6" aria-label="Principais eixos temáticos">
+        <div class="slide-inner">
+          <div class="slide-eyebrow"><span class="num">Seção 3</span></div>
+          <h2 class="slide-title">Principais eixos temáticos</h2>
+          <p class="slide-lede">Os principais eixos temáticos tratados foram:</p>
+          <div class="slide-body">
+            <div class="axis-grid">
+              <button class="axis-card" data-go="8"><span class="ax-n">1</span><span class="ax-t">diagnóstico e gestão do estoque de processos disciplinares</span></button>
+              <button class="axis-card" data-go="11"><span class="ax-n">2</span><span class="ax-t">admissibilidade e fluxo de entrada (RDF, IPS, PAD, TAC)</span></button>
+              <button class="axis-card" data-go="12"><span class="ax-n">3</span><span class="ax-t">tipificação, indiciamento e prescrição</span></button>
+              <button class="axis-card" data-go="13"><span class="ax-n">4</span><span class="ax-t">dosimetria da pena</span></button>
+              <button class="axis-card" data-go="14"><span class="ax-n">5</span><span class="ax-t">acesso, sigilo e proteção de informações</span></button>
+              <button class="axis-card" data-go="15"><span class="ax-n">6</span><span class="ax-t">Termo de Ajustamento de Conduta</span></button>
+              <button class="axis-card" data-go="16"><span class="ax-n">7</span><span class="ax-t">acidentes envolvendo viaturas</span></button>
+              <button class="axis-card" data-go="18"><span class="ax-n">8</span><span class="ax-t">boas práticas cartorárias e temas jurídicos recorrentes</span></button>
+            </div>
+            <p class="prose">A esses eixos somaram-se a apresentação de casos concretos pelas onze Comissões Permanentes de Disciplina e espaços dedicados à discussão de temas jurídicos recorrentes e à consolidação de entendimentos.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7 EXECUÇÃO DO ENCONTRO -->
+      <section class="slide" data-slide="7" id="slide-7" aria-label="Execução do encontro">
+        <div class="slide-inner">
+          <div class="slide-eyebrow"><span class="num">Seção 4</span></div>
+          <h2 class="slide-title">Execução do encontro</h2>
+          <div class="slide-body">
+            <div class="day-tab-track" role="tablist"><button class="day-tab active" data-day="1" role="tab">08 de setembro de 2026</button><button class="day-tab" data-day="2" role="tab">09 de setembro de 2026</button><button class="day-tab" data-day="3" role="tab">10 de setembro de 2026</button><button class="day-tab" data-day="4" role="tab">11 de setembro de 2026</button></div>
+            <div class="day-panel active" data-day="1"><div class="timeline"><div class="timeline-item"><div class="timeline-time"><span class="time-badge">14h</span></div><div class="timeline-content"><h4>Recepção dos servidores</h4></div></div><div class="timeline-item"><div class="timeline-time"><span class="time-badge">14h20–15h00</span></div><div class="timeline-content"><h4>Abertura do evento</h4></div></div><div class="timeline-item"><div class="timeline-time"><span class="time-badge">15h00–15h40</span></div><div class="timeline-content"><h4>Alinhamento técnico da área disciplinar</h4><p>Exposição pela DPF Luciana Caires, com diagnóstico do estoque de processos disciplinares, proposta de metodologia de gestão orientada por dados e apresentação dos objetivos gerais do encontro. Detalhamento na <a class="xref" href="#s-8" data-go="8">Seção 5.1</a>.</p></div></div><div class="timeline-item"><div class="timeline-time"><span class="time-badge">15h40–16h20</span></div><div class="timeline-content"><h4>Admissibilidade e Instauração</h4><p>Exposição do DPF Fabrício de Souza Costa sobre o Registro de Fato Disciplinar como filtro inicial da atividade disciplinar e sobre o fluxo de admissibilidade. Detalhamento na <a class="xref" href="#s-11" data-go="11">Seção 5.2</a>.</p></div></div><div class="timeline-item"><div class="timeline-time"><span class="time-badge">16h40–18h00</span></div><div class="timeline-content"><h4>Apresentação de casos pelas CPDs — 1ª a 3ª CPDs</h4><p>Mediação do DPF Clyton Eustáquio Xavier. Casos da 1ª CPD (oitivas por videoconferência), da 2ª CPD (incidente de sanidade) e da 3ª CPD (assédio sexual). Detalhamento na <a class="xref" href="#s-17" data-go="17">Seção 5.8</a>.</p></div></div></div></div>
+            <div class="day-panel" data-day="2"><div class="timeline"><div class="timeline-item"><div class="timeline-time"><span class="time-badge">9h–9h40</span></div><div class="timeline-content"><h4>Tipificação e Responsabilização</h4><p>Exposição do DPF Michael Assis Fagundes sobre os requisitos do tipo disciplinar da Lei nº 15.047/2024 e a aplicação subsidiária da Lei nº 8.112/1990. Detalhamento na <a class="xref" href="#s-12" data-go="12">Seção 5.3</a>.</p></div></div><div class="timeline-item"><div class="timeline-time"><span class="time-badge">9h40–10h20</span></div><div class="timeline-content"><h4>Apresentação de casos — 4ª e 5ª CPDs</h4><p>Mediação do DPF Clyton Eustáquio Xavier. Caso da 4ª CPD (aplicação da IN nº 264/2023) e caso da 5ª CPD (acidente com viatura e descumprimento de TAC). Detalhamento na <a class="xref" href="#s-17" data-go="17">Seção 5.8</a>.</p></div></div><div class="timeline-item"><div class="timeline-time"><span class="time-badge">10h40–12h00</span></div><div class="timeline-content"><h4>Apresentação de casos — 6ª a 8ª CPDs</h4><p>Mediação do DPF Clyton Eustáquio Xavier. Caso da 6ª CPD (requisição do MPF para elaborar relatório complementar), da 7ª CPD (exercício de atividade compatível com a função policial) e da 8ª CPD (exercício de atividade incompatível).</p></div></div><div class="timeline-item"><div class="timeline-time"><span class="time-badge">14h–14h40</span></div><div class="timeline-content"><h4>Acesso, Sigilo e Proteção das Informações</h4><p>Exposição do DPF Ricardo Amaral Castro Ferreira sobre os critérios de acesso ao PAD e a aplicação da Lei de Acesso à Informação e da Lei Geral de Proteção de Dados. Detalhamento na <a class="xref" href="#s-14" data-go="14">Seção 5.5</a>.</p></div></div><div class="timeline-item"><div class="timeline-time"><span class="time-badge">14h40–15h20</span></div><div class="timeline-content"><h4>Dosimetria da Pena Disciplinar</h4><p>Exposição da DPF Rosinete de Santana Barbosa sobre o sistema trifásico de dosimetria. Detalhamento na <a class="xref" href="#s-13" data-go="13">Seção 5.4</a>.</p></div></div><div class="timeline-item"><div class="timeline-time"><span class="time-badge">15h20–16h00</span></div><div class="timeline-content"><h4>Desenvolvimento do ePOL Disciplinar — SAD</h4><p>Horário reservado ao tema, sob responsabilidade do EPF Rafael Campos de Azevedo Lucindo.</p></div></div><div class="timeline-item"><div class="timeline-time"><span class="time-badge">16h20–18h00</span></div><div class="timeline-content"><h4>Apresentação de casos — 9ª a 11ª CPDs</h4><p>Mediação do DPF Clyton Eustáquio Xavier. Conteúdo da 9ª CPD sobre incidente de sanidade, da 10ª CPD (policial em missão no exterior que não deseja retornar ao Brasil) e da 11ª CPD (sobre atividade paralela à função policial). Detalhamento na <a class="xref" href="#s-17" data-go="17">Seção 5.8</a>.</p></div></div></div></div>
+            <div class="day-panel" data-day="3"><div class="timeline"><div class="timeline-item"><div class="timeline-time"><span class="time-badge">9h–9h40</span></div><div class="timeline-content"><h4>Indiciamento e Prescrição Administrativa Disciplinar</h4><p>Exposição da DPF Rosinete de Santana Barbosa. Detalhamento na <a class="xref" href="#s-12" data-go="12">Seção 5.3</a>.</p></div></div><div class="timeline-item"><div class="timeline-time"><span class="time-badge">9h40–10h20</span></div><div class="timeline-content"><h4>Acidentes Envolvendo Viaturas Policiais</h4><p>Exposição do DPF Alexandre Camões Bessa. Detalhamento na <a class="xref" href="#s-16" data-go="16">Seção 5.7</a>.</p></div></div><div class="timeline-item"><div class="timeline-time"><span class="time-badge">10h20-10h40</span></div><div class="timeline-content"><h4>Recusa do recebimento de flagrantes de crime de tráfico de drogas, ainda que sem repercussão transnacional</h4><p>Exposição do DPF Custódio, CGPRE.</p></div></div><div class="timeline-item"><div class="timeline-time"><span class="time-badge">10h40–12h00</span></div><div class="timeline-content"><h4>Discussão de Pontos Específicos e Alteração da Legislação Disciplinar</h4><p>Conduzida pelo DPF Clyton Eustáquio Xavier; bloco de maior densidade de debate do encontro, correspondente a nove dos onze entendimentos consolidados (<a class="xref" href="#s-19" data-go="19">Seção 6</a>).</p></div></div><div class="timeline-item"><div class="timeline-time"><span class="time-badge">14h</span></div><div class="timeline-content"><h4>Palestra de orientação conduzida pela Corregedora-Geral, DPF Aletea Marona Kunde</h4></div></div><div class="timeline-item"><div class="timeline-time"><span class="time-badge">14h10–14h40</span></div><div class="timeline-content"><h4>Celebração de Termos de Ajustamento de Conduta</h4><p>Exposição da DPF Graziele Alessandra Soares Araújo Fonseca e do DPF Roberto Rubem Ribeiro. Detalhamento na <a class="xref" href="#s-15" data-go="15">Seção 5.6</a>.</p></div></div><div class="timeline-item"><div class="timeline-time"><span class="time-badge">14h40–15h20</span></div><div class="timeline-content"><h4>Prevenção e Gestão</h4><p>Horário reservado ao tema, sob responsabilidade da DPF Fernanda Camargo, do DPF Sérgio e do DPF Ricardo Sancovich.</p></div></div><div class="timeline-item"><div class="timeline-time"><span class="time-badge">15h20–16h00</span></div><div class="timeline-content"><h4>Boas Práticas Disciplinares</h4><p>Conduzida pelo DPF Clyton Eustáquio Xavier. Detalhamento na <a class="xref" href="#s-18" data-go="18">Seção 5.9</a>.</p></div></div><div class="timeline-item"><div class="timeline-time"><span class="time-badge">16h40–18h00</span></div><div class="timeline-content"><h4>Temas Jurídicos Recorrentes</h4><p>Mediação da DPF Luciana Caires e do DPF Clyton Eustáquio Xavier; bloco de encerramento temático do terceiro dia, associado à consolidação dos entendimentos (<a class="xref" href="#s-19" data-go="19">Seção 6</a>).</p></div></div></div></div>
+            <div class="day-panel" data-day="4"><div class="timeline"><div class="timeline-item"><div class="timeline-time"><span class="time-badge">9h–9h40</span></div><div class="timeline-content"><h4>Improbidade Administrativa — Entendimento PF</h4><p>Horário reservado ao tema, sob responsabilidade do DPF Thiago de Araújo Marques.</p></div></div><div class="timeline-item"><div class="timeline-time"><span class="time-badge">9h40–10h20</span></div><div class="timeline-content"><h4>Registro dos Enunciados Temáticos</h4><p>Consolidação dos temas e entendimentos tratados ao longo do encontro, resultando nos onze entendimentos técnicos apresentados na <a class="xref" href="#s-19" data-go="19">Seção 6</a>.</p></div></div><div class="timeline-item"><div class="timeline-time"><span class="time-badge">10h40–12h00</span></div><div class="timeline-content"><h4>Encerramento</h4><p>Encerramento conduzido pela Corregedora-Geral substituta, DPF Fernanda Camargo.</p></div></div></div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8 DIAGNÓSTICO E GESTÃO DO ESTOQUE -->
+      <section class="slide" data-slide="8" id="slide-8" aria-label="Diagnóstico e gestão do estoque disciplinar">
+        <div class="slide-inner">
+          <div class="slide-eyebrow"><span class="num">Seção 5.1</span></div>
+          <h2 class="slide-title">Diagnóstico e gestão do estoque disciplinar</h2>
+          <p class="slide-lede">O encontro apresentou diagnóstico consolidado do estoque de Processos Administrativos Disciplinares (PADs). A área disciplinar está organizada em 27 Núcleos de Disciplina, de atuação estadual, e 11 Comissões Permanentes de Disciplina, de atuação regional.</p>
           <div class="slide-body">
             <div class="stats-card">
-              <div class="stats-card-header"><div class="stats-card-title">Composição do estoque</div></div>
               <div class="funnel-row">
-                <div class="funnel-step"><strong>187</strong><span>Estoque bruto</span></div>
-                <div class="funnel-arrow">→</div>
-                <div class="funnel-step dim"><strong>32</strong><span>Já relatados (excluídos)</span></div>
-                <div class="funnel-arrow">→</div>
-                <div class="funnel-step" style="border-color: var(--border-gold); background: rgba(212,175,55,0.08);"><strong>155</strong><span>Estoque ativo</span></div>
+                <div class="funnel-step"><strong>187</strong><span>estoque bruto</span></div>
+                <div class="funnel-arrow" aria-hidden="true">→</div>
+                <div class="funnel-step dim"><strong>32</strong><span>processos já relatados</span></div>
+                <div class="funnel-arrow" aria-hidden="true">→</div>
+                <div class="funnel-step gold"><strong>155</strong><span>estoque ativo</span></div>
               </div>
+              <p class="fig-note">que aguardam apenas outras providências · correspondente ao volume que efetivamente demanda esforço instrutório</p>
               <div class="stat-inline-row">
-                <div class="stat-inline"><strong>360,5 d</strong><span>duração média (–60 d vs. bruto)</span></div>
-                <div class="stat-inline"><strong>313 d</strong><span>mediana (–37 d vs. bruto)</span></div>
-                <div class="stat-inline"><strong>2.100 d</strong><span>processo mais antigo</span></div>
+                <div class="stat-inline"><strong>360,5 dias</strong><span>duração média</span></div>
+                <div class="stat-inline"><strong>313 dias</strong><span>mediana</span></div>
+                <div class="stat-inline"><strong>2.100 dias</strong><span>processo mais antigo</span></div>
               </div>
+              <p class="fig-note">a exclusão dos processos já relatados reduziu a média em 60 dias e a mediana em 37 dias em relação aos números brutos</p>
             </div>
+            <details class="expand"><summary>Texto integral do parágrafo</summary>
+              <div class="expand-body"><p>O encontro apresentou diagnóstico consolidado do estoque de Processos Administrativos Disciplinares (PADs). A área disciplinar está organizada em 27 Núcleos de Disciplina, de atuação estadual, e 11 Comissões Permanentes de Disciplina, de atuação regional. Foi apresentado estoque bruto de 187 PADs, do qual são excluídos 32 processos já relatados — que aguardam apenas outras providências —, resultando em estoque ativo de 155 PADs, correspondente ao volume que efetivamente demanda esforço instrutório. Para esse estoque ativo, foram indicados duração média de 360,5 dias, mediana de 313 dias e processo mais antigo com 2.100 dias; a exclusão dos processos já relatados reduziu a média em 60 dias e a mediana em 37 dias em relação aos números brutos.</p></div>
+            </details>
           </div>
         </div>
       </section>
 
-      <!-- ============================= SLIDE 8 — ESTOQUE POR ANO ============================= -->
-      <section class="slide" data-slide="8" id="slide-8">
+      <!-- 9 ESTOQUE ATIVO POR ANO -->
+      <section class="slide" data-slide="9" id="slide-9" aria-label="Estoque ativo por ano de instauração">
         <div class="slide-inner">
-          <div class="slide-eyebrow"><span class="num">05</span> Diagnóstico</div>
+          <div class="slide-eyebrow"><span class="num">Seção 5.1</span></div>
           <h2 class="slide-title">Estoque ativo por ano de instauração</h2>
-          <p class="slide-lede">155 processos ativos segmentados por safra de instauração — cada faixa com quantidade e prazo médio próprios.</p>
+          <p class="slide-lede">Os 155 processos foram segmentados por ano de instauração: 133 (85,8%) instaurados em 2025 ou 2026 — 72 da safra de 2025 e 61 da de 2026 — e 22 (14,2%) de 2024 ou anos anteriores, tratados como passivo histórico.</p>
           <div class="slide-body">
             <div class="stats-card">
               <div class="bar-chart-row">
-                <div class="bar-item"><div class="bar-header"><span>2026</span><strong>61 processos · 102 dias médios</strong></div><div class="bar-track"><div class="bar-fill gold" data-w="85"></div></div></div>
-                <div class="bar-item"><div class="bar-header"><span>2025</span><strong>72 processos · 381 dias médios</strong></div><div class="bar-track"><div class="bar-fill silver" data-w="100"></div></div></div>
-                <div class="bar-item"><div class="bar-header"><span>2024</span><strong>15 processos · 732 dias médios</strong></div><div class="bar-track"><div class="bar-fill rose" data-w="21"></div></div></div>
-                <div class="bar-item"><div class="bar-header"><span>2023 ou antes</span><strong>7 processos · sem prazo médio indicado</strong></div><div class="bar-track"><div class="bar-fill gray" data-w="10"></div></div></div>
+                <div class="bar-item"><div class="bar-header"><span>2026: 61 processos, 102 dias</span></div><div class="bar-track"><div class="bar-fill gold" data-w="85"></div></div></div>
+                <div class="bar-item"><div class="bar-header"><span>2025: 72 processos, 381 dias</span></div><div class="bar-track"><div class="bar-fill gold" data-w="100"></div></div></div>
+                <div class="bar-item"><div class="bar-header"><span>2024: 15 processos, 732 dias</span></div><div class="bar-track"><div class="bar-fill gold" data-w="21"></div></div></div>
+                <div class="bar-item"><div class="bar-header"><span>2023 ou antes: 7 processos, sem prazo médio indicado</span></div><div class="bar-track"><div class="bar-fill gold" data-w="10"></div></div></div>
               </div>
               <div class="stat-inline-row">
-                <div class="stat-inline"><strong>85,8%</strong><span>133 processos de 2025 + 2026</span></div>
-                <div class="stat-inline"><strong>14,2%</strong><span>22 processos — passivo histórico (2024 ou antes)</span></div>
+                <div class="stat-inline"><strong>133 (85,8%)</strong><span>instaurados em 2025 ou 2026 — 72 da safra de 2025 e 61 da de 2026</span></div>
+                <div class="stat-inline"><strong>22 (14,2%)</strong><span>de 2024 ou anos anteriores, tratados como passivo histórico</span></div>
               </div>
-              <p style="font-size:.78rem;color:var(--text-muted);margin-top:12px;">Detalhamento por unidade organizacional (14 unidades identificadas, incluindo as CPDs) consta do Anexo V do relatório original.</p>
+              <p class="fig-note">com identificação individual de 14 unidades organizacionais — as CPDs e determinadas representações estaduais específicas — e do prazo médio de duração de PAD em cada uma · <a class="xref" href="#s-24" data-go="24">Ver dados quantitativos complementares</a></p>
             </div>
+            <details class="expand"><summary>Texto integral do parágrafo</summary>
+              <div class="expand-body"><p>Os 155 processos foram segmentados por ano de instauração: 133 (85,8%) instaurados em 2025 ou 2026 — 72 da safra de 2025 e 61 da de 2026 — e 22 (14,2%) de 2024 ou anos anteriores, tratados como passivo histórico. Um detalhamento por faixa associou a cada uma quantidade e prazo médio próprios (2026: 61 processos, 102 dias; 2025: 72 processos, 381 dias; 2024: 15 processos, 732 dias; 2023 ou antes: 7 processos, sem prazo médio indicado), com identificação individual de 14 unidades organizacionais — as CPDs e determinadas representações estaduais específicas — e do prazo médio de duração de PAD em cada uma (detalhamento no <a class="xref" href="#s-24" data-go="24">Anexo V</a>).</p></div>
+            </details>
           </div>
         </div>
       </section>
 
-      <!-- ============================= SLIDE 9 — ESTRATÉGIA & PAINÉIS RDF/IPS ============================= -->
-      <section class="slide" data-slide="9" id="slide-9">
+      <!-- 10 ESTRATÉGIA E PAINÉIS -->
+      <section class="slide" data-slide="10" id="slide-10" aria-label="Estratégia de duas frentes e painéis de indicadores">
         <div class="slide-inner">
-          <div class="slide-eyebrow"><span class="num">05</span> Diagnóstico</div>
-          <h2 class="slide-title">Estratégia de gestão &amp; painéis RDF/IPS</h2>
-          <p class="slide-lede">Proposta técnica apresentada no encontro — estratégia de duas frentes, ainda não convertida em ato formal de aprovação institucional.</p>
+          <div class="slide-eyebrow"><span class="num">Seção 5.1</span></div>
+          <h2 class="slide-title">Estratégia de duas frentes e painéis de indicadores</h2>
+          <p class="slide-lede">A partir desse diagnóstico, foi proposta uma estratégia de duas frentes: recuperar o passivo histórico de 22 processos mais antigos e blindar os 72 processos de 2025 contra o envelhecimento. Essa estratégia constitui proposta técnica apresentada no encontro, ainda não convertida em ato formal de aprovação institucional.</p>
           <div class="slide-body">
             <div class="two-col">
-              <div class="strategy-card recover"><div class="front-label">Frente 1</div><h4>Recuperar</h4><div class="front-num">22</div><p>processos do passivo histórico (2024 ou antes) — intervenção direcionada.</p></div>
-              <div class="strategy-card shield"><div class="front-label">Frente 2</div><h4>Blindar</h4><div class="front-num">72</div><p>processos de 2025 contra o envelhecimento — gestão rigorosa e aceleração instrutória.</p></div>
+              <div class="strategy-card recover"><div class="front-label">Frente 1</div><h4>Recuperar</h4><div class="front-num">22</div><p>intervenção direcionada nos 22 processos do passivo histórico</p></div>
+              <div class="strategy-card shield"><div class="front-label">Frente 2</div><h4>Blindar</h4><div class="front-num">72</div><p>gestão rigorosa e aceleração instrutória nos 72 processos de 2025</p></div>
             </div>
             <div class="stats-grid">
               <div class="stats-card">
@@ -1053,7 +1035,7 @@ header,.deck-nav{background:rgba(10,10,13,.78);backdrop-filter:blur(24px) satura
                   <div class="stat-inline"><strong>118</strong><span>em andamento</span></div>
                   <div class="stat-inline"><strong>1.417</strong><span>decididos</span></div>
                   <div class="stat-inline"><strong>42</strong><span>encerrados sem decisão</span></div>
-                  <div class="stat-inline"><strong>49 d</strong><span>duração média</span></div>
+                  <div class="stat-inline"><strong>49 dias</strong><span>duração média</span></div>
                 </div>
               </div>
               <div class="stats-card">
@@ -1063,464 +1045,419 @@ header,.deck-nav{background:rgba(10,10,13,.78);backdrop-filter:blur(24px) satura
                   <div class="stat-inline"><strong>136</strong><span>em andamento</span></div>
                   <div class="stat-inline"><strong>647</strong><span>relatadas</span></div>
                   <div class="stat-inline"><strong>878</strong><span>decididas</span></div>
-                  <div class="stat-inline"><strong>134 d</strong><span>duração média</span></div>
+                  <div class="stat-inline"><strong>43</strong><span>encerradas sem decisão</span></div>
+                  <div class="stat-inline"><strong>134 dias</strong><span>duração média</span></div>
                 </div>
               </div>
             </div>
+            <div class="info-card"><p>A exposição apresentou ainda painéis de indicadores de Registro de Fato Disciplinar (RDF) — 1.580 instaurados, 118 em andamento, 1.417 decididos, 42 encerrados sem decisão, duração média de 49 dias — e de Investigação Preliminar Sumária (IPS) — 1.052 instauradas, 136 em andamento, 647 relatadas, 878 decididas, 43 encerradas sem decisão, duração média de 134 dias —, ambos discriminados por região, por ano e por tipo de decisão (detalhamento no <a class="xref" href="#s-24" data-go="24">Anexo V</a>).</p></div>
           </div>
         </div>
       </section>
 
-      <!-- ============================= SLIDE 10 — ADMISSIBILIDADE ============================= -->
-      <section class="slide" data-slide="10" id="slide-10">
+      <!-- 11 ADMISSIBILIDADE -->
+      <section class="slide" data-slide="11" id="slide-11" aria-label="Admissibilidade e fluxo disciplinar">
         <div class="slide-inner">
-          <div class="slide-eyebrow"><span class="num">06</span> Conteúdo técnico</div>
-          <h2 class="slide-title">Fluxo de admissibilidade</h2>
-          <p class="slide-lede">O Registro de Fato Disciplinar (RDF) funciona como porta de entrada para notícias de possível relevância disciplinar e filtro inicial antes de qualquer instauração mais gravosa.</p>
+          <div class="slide-eyebrow"><span class="num">Seção 5.2</span></div>
+          <h2 class="slide-title">Admissibilidade e fluxo disciplinar</h2>
+          <p class="slide-lede">A exposição sobre admissibilidade sistematizou o fluxo de entrada da atividade disciplinar. O Registro de Fato Disciplinar (RDF) funciona como porta de entrada para notícias de possível relevância disciplinar e filtro inicial antes de qualquer instauração mais gravosa, estruturando o juízo de admissibilidade em torno de quatro desfechos possíveis: arquivamento, providência gerencial, instauração de Investigação Preliminar Sumária (reservada às hipóteses em que autoria e materialidade ainda não estejam delineadas) e instauração de Processo Administrativo Disciplinar (quando já houver base mínima).</p>
           <div class="slide-body">
             <div class="stats-card">
-              <div class="stats-card-header"><div class="stats-card-title">Desfechos possíveis do juízo de admissibilidade</div></div>
+              <div class="stats-card-header"><div class="stats-card-title">quatro desfechos possíveis</div></div>
               <div class="flow-chain">
-                <div class="flow-node gold">Notícia de possível relevância disciplinar</div>
-                <div class="flow-arrow-down">↓</div>
+                <div class="flow-node gold">notícias de possível relevância disciplinar</div>
+                <div class="flow-arrow-down" aria-hidden="true">↓</div>
                 <div class="flow-node">Registro de Fato Disciplinar (RDF)</div>
-                <div class="flow-arrow-down">↓</div>
+                <div class="flow-arrow-down" aria-hidden="true">↓</div>
+                <div class="flow-node">juízo de admissibilidade</div>
+                <div class="flow-arrow-down" aria-hidden="true">↓</div>
                 <div class="flow-branches">
-                  <span class="flow-branch">Arquivamento</span>
-                  <span class="flow-branch">Providência gerencial</span>
-                  <span class="flow-branch">TAC (menor potencial ofensivo)</span>
-                  <span class="flow-branch">IPS (autoria/materialidade não delineadas)</span>
-                  <span class="flow-branch">PAD (base mínima já existente)</span>
+                  <span class="flow-branch">arquivamento</span>
+                  <span class="flow-branch">providência gerencial</span>
+                  <span class="flow-branch">instauração de Investigação Preliminar Sumária (reservada às hipóteses em que autoria e materialidade ainda não estejam delineadas)</span>
+                  <span class="flow-branch">instauração de Processo Administrativo Disciplinar (quando já houver base mínima)</span>
                 </div>
               </div>
-              <details class="expand"><summary>Ver fluxo administrativo detalhado</summary>
-                <div class="expand-body">
-                  <div class="step-list">
-                    <div class="step-row"><div class="step-idx">1</div><div class="step-txt">Recebimento do documento no SEI pela Secretaria</div></div>
-                    <div class="step-row"><div class="step-idx">2</div><div class="step-txt">Determinação da Corregedoria para instauração do RDF</div></div>
-                    <div class="step-row"><div class="step-idx">3</div><div class="step-txt">Registro do RDF — juntada, remessa ao Corregedor ou arquivamento</div></div>
-                    <div class="step-row"><div class="step-idx">4</div><div class="step-txt">Registro no sistema de acompanhamento e no ePad, com atualização do SEI</div></div>
-                    <div class="step-row"><div class="step-idx">5</div><div class="step-txt">Despacho da chefia — arquivamento, arquivamento com notificação, ou instauração de outro procedimento</div></div>
-                    <div class="step-row"><div class="step-idx">6</div><div class="step-txt">Distribuição a parecerista e acompanhamento da resposta, com reiteração quando necessário</div></div>
-                    <div class="step-row"><div class="step-idx">7</div><div class="step-txt">Retorno à chefia após o parecer, com novo despacho</div></div>
-                    <div class="step-row"><div class="step-idx">8</div><div class="step-txt">Decisão do Corregedor e retorno ao Núcleo de Disciplina competente</div></div>
-                    <div class="step-row"><div class="step-idx">9</div><div class="step-txt">Atualização final dos sistemas e da planilha de controle</div></div>
-                  </div>
-                  <p style="margin-top:10px;">Esse fluxo dialoga com os entendimentos 7, 9 e 10 (aditamento de portaria, prazo da IPS e incidente de sanidade) — ver tela 18.</p>
+              <p class="fig-note">O Termo de Ajustamento de Conduta foi situado como desfecho possível para infrações de menor potencial ofensivo, dentro desse mesmo juízo, com atenção aos limites do RDF em relação a diligências tipicamente investigativas, reservadas a procedimentos formalmente instaurados.</p>
+            </div>
+            <details class="expand"><summary>Fluxo administrativo detalhado</summary>
+              <div class="expand-body">
+                <p>Foi reconstituído em detalhe o fluxo administrativo correspondente:</p>
+                <div class="step-list numbered">
+                  <div class="step-row"><div class="step-idx">1</div><div class="step-txt">recebimento do documento no SEI pela Secretaria</div></div>
+                  <div class="step-row"><div class="step-idx">2</div><div class="step-txt">determinação da Corregedoria para instauração do RDF</div></div>
+                  <div class="step-row"><div class="step-idx">3</div><div class="step-txt">registro do RDF — com possibilidade de juntada a procedimento já instaurado, remessa ao Corregedor com sugestão de outro procedimento, ou arquivamento</div></div>
+                  <div class="step-row"><div class="step-idx">4</div><div class="step-txt">registro no sistema de acompanhamento e no ePad, com atualização do SEI</div></div>
+                  <div class="step-row"><div class="step-idx">5</div><div class="step-txt">despacho da chefia sugerindo arquivamento, arquivamento com notificação, ou instauração de outro procedimento, com distribuição a parecerista</div></div>
+                  <div class="step-row"><div class="step-idx">6</div><div class="step-txt">acompanhamento da resposta, com reiteração quando necessário</div></div>
+                  <div class="step-row"><div class="step-idx">7</div><div class="step-txt">retorno à chefia após o parecer, com novo despacho</div></div>
+                  <div class="step-row"><div class="step-idx">8</div><div class="step-txt">decisão do Corregedor</div></div>
+                  <div class="step-row"><div class="step-idx">9</div><div class="step-txt">retorno ao Núcleo de Disciplina competente para as providências cabíveis</div></div>
+                  <div class="step-row"><div class="step-idx">10</div><div class="step-txt">atualização final dos sistemas e da planilha de controle</div></div>
                 </div>
+                <p>Esse fluxo dialoga com etapas tratadas em entendimentos posteriores sobre aditamento de portaria, prazo da IPS e incidente de sanidade (<a class="xref" href="#s-19" data-go="19">Seção 6</a>).</p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- 12 TIPIFICAÇÃO, INDICIAMENTO E PRESCRIÇÃO -->
+      <section class="slide" data-slide="12" id="slide-12" aria-label="Tipificação, indiciamento e prescrição">
+        <div class="slide-inner">
+          <div class="slide-eyebrow"><span class="num">Seção 5.3</span></div>
+          <h2 class="slide-title">Tipificação, indiciamento e prescrição</h2>
+          <div class="slide-body">
+            <div class="card-grid">
+              <div class="info-card"><div class="k-label">Tipificação</div><p>Foram tratados e alinhados os requisitos do tipo disciplinar do art. 5º, I, da Lei nº 15.047/2024, de sua força vinculante e do nexo exigido com as atribuições funcionais, distinguindo descumprimento de norma vinculante — único fundamento válido para responsabilização sob esse dispositivo — de mera deficiência funcional. Foram tratadas a aplicação subsidiária da Lei nº 8.112/1990 e a relação entre legislação específica e geral, com afirmação da autonomia da esfera ética em relação à disciplinar, no sentido de que infração ao Código de Ética não gera, por si só, repercussão disciplinar automática.</p></div>
+              <div class="info-card"><div class="k-label">Indiciamento</div><p>Quanto ao indiciamento, foram tratados o encerramento da instrução e a delimitação da acusação, exigindo descrição específica dos fatos, individualização das condutas e correspondência entre conduta descrita e prova produzida, sob risco de deficiência acusatória; o papel da comissão processante; o enquadramento provisório da conduta, distinto do enquadramento definitivo do relatório final; e a hipótese de absolvição sumária.</p></div>
+            </div>
+            <div class="stats-card">
+              <div class="stats-card-header"><div class="stats-card-title">Prescrição</div></div>
+              <p class="prose">Quanto à prescrição, foram organizados os prazos conforme haja correspondência da conduta com a esfera criminal e nesse caso a prescrição disciplinar acompanha a pena máxima cominada.</p>
+              <div class="stat-inline-row">
+                <div class="stat-inline"><strong>5 anos</strong><span>demissão, cassação de aposentadoria ou destituição de cargo</span></div>
+                <div class="stat-inline"><strong>2 anos</strong><span>suspensão</span></div>
+                <div class="stat-inline"><strong>180 dias</strong><span>advertência</span></div>
+              </div>
+              <p class="prose">Na esfera estritamente disciplinar vigora o art. 111 da Lei nº 15.047: prescrição de 5 anos para casos de demissão, cassação de aposentadoria ou destituição de cargo, de 2 anos para casos de suspensão e 180 dias para casos de advertência. A contagem se inicia na data em que a autoridade competente toma conhecimento do fato.</p>
+              <details class="expand"><summary>Demais pontos tratados</summary>
+                <div class="expand-body"><p>Foram tratados ainda processos ordinários e sumários, os efeitos de decisões judiciais, a relação com o TAC, o abandono de cargo e o curso da prescrição durante a instrução, e as providências quando há dano ao erário ou a terceiros. Esses temas foram retomados em três entendimentos posteriores — sobre aplicação subsidiária da Lei nº 8.112/1990, autonomia entre infração ética e disciplinar, aditamento de portaria e prazo da IPS (<a class="xref" href="#s-19" data-go="19">Seção 6</a>).</p></div>
               </details>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ============================= SLIDE 11 — TIPIFICAÇÃO / PRESCRIÇÃO ============================= -->
-      <section class="slide" data-slide="11" id="slide-11">
+      <!-- 13 DOSIMETRIA -->
+      <section class="slide" data-slide="13" id="slide-13" aria-label="Dosimetria">
         <div class="slide-inner">
-          <div class="slide-eyebrow"><span class="num">06</span> Conteúdo técnico</div>
-          <h2 class="slide-title">Tipificação, indiciamento e prescrição</h2>
+          <div class="slide-eyebrow"><span class="num">Seção 5.4</span></div>
+          <h2 class="slide-title">Dosimetria</h2>
+          <p class="slide-lede">O bloco apresentou o sistema trifásico de dosimetria, estruturado a partir de natureza, gravidade e dano da infração, circunstâncias do fato, antecedentes, agravantes, atenuantes, reincidência, concurso de infrações e causas de aumento ou diminuição da pena.</p>
           <div class="slide-body">
-            <div class="card-grid">
-              <div class="info-card">
-                <h4>Tipificação</h4>
-                <p>Requisitos do tipo disciplinar do art. 5º, I, da Lei nº 15.047/2024: força vinculante e nexo com as atribuições funcionais. Descumprimento de norma vinculante é o único fundamento válido — distinto de mera deficiência funcional.</p>
-                <p>Aplicação subsidiária da Lei nº 8.112/1990; autonomia da esfera ética em relação à disciplinar (infração ao Código de Ética não gera, por si só, repercussão disciplinar automática).</p>
-              </div>
-              <div class="info-card">
-                <h4>Indiciamento</h4>
-                <p>Encerramento da instrução exige descrição específica dos fatos, individualização das condutas e correspondência entre conduta descrita e prova produzida — sob risco de deficiência acusatória.</p>
-                <p>Papel da comissão processante; enquadramento provisório (distinto do definitivo, no relatório final); hipótese de absolvição sumária.</p>
-              </div>
-            </div>
             <div class="stats-card">
-              <div class="stats-card-header"><div class="stats-card-title">Prescrição</div></div>
-              <p style="font-size:.86rem;color:#d4d4d8;line-height:1.6;">Prazos organizados conforme a pena máxima cominada — de <strong style="color:#fff">3 anos</strong> (penas inferiores a 1 ano) a <strong style="color:#fff">20 anos</strong> (penas superiores a 12 anos). Termo inicial vinculado ao conhecimento do fato, com causas de interrupção, suspensão e retomada.</p>
-              <div class="stat-inline-row" style="margin-top:14px;">
-                <div class="stat-inline"><strong>60 d</strong><span>interrupção inicial do PAD</span></div>
-                <div class="stat-inline"><strong>60 d</strong><span>prorrogação</span></div>
-                <div class="stat-inline"><strong>20 d</strong><span>julgamento</span></div>
-                <div class="stat-inline" style="border-color:var(--border-gold);background:rgba(212,175,55,0.08);"><strong>140 d</strong><span>total de interrupção</span></div>
-              </div>
-              <div class="chip-row" style="margin-top:14px;">
-                <span class="tag-item">Processos ordinários e sumários</span>
-                <span class="tag-item">Efeitos de decisões judiciais</span>
-                <span class="tag-item">Relação com o TAC</span>
-                <span class="tag-item">Abandono de cargo</span>
-                <span class="tag-item">Curso da prescrição durante a instrução</span>
-                <span class="tag-item">Dano ao erário ou a terceiros</span>
+              <div class="stats-card-header"><div class="stats-card-title">régua de graus e penalidade cabível</div></div>
+              <div class="stat-inline-row">
+                <div class="stat-inline"><strong>até 15 pontos</strong><span>advertência</span></div>
+                <div class="stat-inline"><strong>a partir de 16 pontos</strong><span>suspensão progressiva</span></div>
+                <div class="stat-inline"><strong>105 pontos ou mais</strong><span>patamar máximo de 90 dias</span></div>
               </div>
             </div>
+            <div class="info-card"><p>Foi apresentada régua de graus e penalidade cabível (até 15 pontos, advertência; a partir de 16 pontos, suspensão progressiva, até o patamar máximo de 90 dias para 105 pontos ou mais), o uso de calculadora de dosimetria da CGU como ferramenta de apoio e critérios diferenciados para advertência, suspensão e reincidência, com exercícios práticos anonimizados demonstrando como a pontuação varia conforme a fundamentação e as circunstâncias atribuídas a cada elemento.</p></div>
           </div>
         </div>
       </section>
 
-      <!-- ============================= SLIDE 12 — DOSIMETRIA ============================= -->
-      <section class="slide" data-slide="12" id="slide-12">
+      <!-- 14 ACESSO, SIGILO E PROTEÇÃO DAS INFORMAÇÕES -->
+      <section class="slide" data-slide="14" id="slide-14" aria-label="Acesso, sigilo e proteção das informações">
         <div class="slide-inner">
-          <div class="slide-eyebrow"><span class="num">06</span> Conteúdo técnico</div>
-          <h2 class="slide-title">Dosimetria da pena disciplinar</h2>
-          <p class="slide-lede">Sistema trifásico, estruturado a partir de natureza, gravidade e dano da infração, circunstâncias do fato, antecedentes, agravantes, atenuantes, reincidência, concurso de infrações e causas de aumento ou diminuição da pena.</p>
-          <div class="slide-body">
-            <div class="stats-card">
-              <div class="stats-card-header"><div class="stats-card-title">Régua de graus e penalidade</div></div>
-              <div class="bar-chart-row">
-                <div class="bar-item"><div class="bar-header"><span>Até 15 pontos</span><strong>Advertência</strong></div><div class="bar-track"><div class="bar-fill emerald" data-w="14"></div></div></div>
-                <div class="bar-item"><div class="bar-header"><span>A partir de 16 pontos</span><strong>Suspensão progressiva</strong></div><div class="bar-track"><div class="bar-fill gold" data-w="55"></div></div></div>
-                <div class="bar-item"><div class="bar-header"><span>105 pontos ou mais</span><strong>Patamar máximo — 90 dias</strong></div><div class="bar-track"><div class="bar-fill rose" data-w="100"></div></div></div>
-              </div>
-              <p style="font-size:.8rem;color:var(--text-muted);margin-top:10px;">Uso da calculadora de dosimetria da CGU como ferramenta de apoio; critérios diferenciados para advertência, suspensão e reincidência, com exercícios práticos anonimizados.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ============================= SLIDE 13 — ACESSO E SIGILO ============================= -->
-      <section class="slide" data-slide="13" id="slide-13">
-        <div class="slide-inner">
-          <div class="slide-eyebrow"><span class="num">06</span> Conteúdo técnico</div>
-          <h2 class="slide-title">Acesso, sigilo e proteção de dados</h2>
-          <p class="slide-lede">Critérios de acesso ao Processo Administrativo Disciplinar, sistematizados conforme o interessado.</p>
+          <div class="slide-eyebrow"><span class="num">Seção 5.5</span></div>
+          <h2 class="slide-title">Acesso, sigilo e proteção das informações</h2>
+          <p class="slide-lede">Foram discutidos e sistematizados os critérios de acesso ao Processo Administrativo Disciplinar conforme o interessado:</p>
           <div class="slide-body">
             <div class="card-grid">
-              <div class="info-card"><h4>👤 Investigado e advogado</h4><p>Acesso amplo, para exercício do contraditório e da ampla defesa.</p></div>
-              <div class="info-card"><h4>🗣️ Testemunhas</h4><p>Apenas a informação mínima necessária; sem acesso a cópia da própria oitiva ou à gravação.</p></div>
-              <div class="info-card"><h4>⚠️ Denunciante e vítima</h4><p>Acesso limitado — a vítima é restrita à informação sobre a existência ou não de instauração.</p></div>
-              <div class="info-card"><h4>🏛️ Terceiros e órgãos públicos</h4><p>Ministério Público, CGU e AGU seguem regras próprias de compartilhamento.</p></div>
+              <div class="info-card"><h4>Investigado e advogado</h4><p>investigado e advogado têm acesso amplo, para contraditório e ampla defesa</p></div>
+              <div class="info-card"><h4>Testemunhas</h4><p>testemunhas recebem apenas a informação mínima necessária, sem acesso a cópia de sua própria oitiva ou à gravação</p></div>
+              <div class="info-card"><h4>Denunciante e vítima</h4><p>denunciante e vítima têm acesso limitado (a vítima, restrito à informação sobre a existência ou não de instauração)</p></div>
+              <div class="info-card"><h4>Terceiros e outros órgãos públicos</h4><p>terceiros e outros órgãos públicos (Ministério Público, CGU, AGU) seguem regras próprias de compartilhamento</p></div>
             </div>
             <div class="highlight-box">
               <div class="h-label">LAI · LGPD</div>
-              <p>Após a decisão da autoridade instauradora — independentemente de trânsito em julgado —, os dados podem ser fornecidos a terceiros legitimados, desde que excluídos os dados sensíveis, mediante anonimização.</p>
+              <p>Foi tratada também a aplicação da Lei de Acesso à Informação e da Lei Geral de Proteção de Dados, com indicação de que, após a decisão da autoridade instauradora (competente para decidir – art. 28 da IN nº 304/2025) — independentemente de trânsito em julgado —, dados podem ser fornecidos a terceiros legitimados desde que excluídos os dados sensíveis, mediante anonimização, além dos níveis de acesso no sistema SEI.</p>
             </div>
+            <p class="fig-note">O tema foi retomado em entendimento posterior (<a class="xref" href="#s-19" data-go="19">Seção 6</a>).</p>
           </div>
         </div>
       </section>
 
-      <!-- ============================= SLIDE 14 — TAC ============================= -->
-      <section class="slide" data-slide="14" id="slide-14">
+      <!-- 15 TAC -->
+      <section class="slide" data-slide="15" id="slide-15" aria-label="Termo de Ajustamento de Conduta">
         <div class="slide-inner">
-          <div class="slide-eyebrow"><span class="num">06</span> Conteúdo técnico</div>
+          <div class="slide-eyebrow"><span class="num">Seção 5.6</span></div>
           <h2 class="slide-title">Termo de Ajustamento de Conduta</h2>
-          <p class="slide-lede">Instrumento destinado a infrações de menor potencial ofensivo, aplicável a infrações puníveis com advertência ou suspensão de até 30 dias.</p>
+          <p class="slide-lede">O bloco descreveu o TAC como instrumento destinado a infrações de menor potencial ofensivo, estruturado em ciclo de compromisso assumido, cumprimento das regras e ficha funcional limpa.</p>
           <div class="slide-body">
             <div class="stats-card">
-              <div class="stats-card-header"><div class="stats-card-title">Ciclo do TAC</div></div>
+              <div class="stats-card-header"><div class="stats-card-title">compromisso assumido, cumprimento das regras e ficha funcional limpa</div></div>
               <div class="flow-chain">
-                <div class="flow-node">Compromisso assumido</div>
-                <div class="flow-arrow-down">↓</div>
-                <div class="flow-node">Cumprimento das regras</div>
-                <div class="flow-arrow-down">↓</div>
-                <div class="flow-node gold">Ficha funcional limpa · extingue o processo</div>
+                <div class="flow-node">compromisso assumido</div>
+                <div class="flow-arrow-down" aria-hidden="true">↓</div>
+                <div class="flow-node">cumprimento das regras</div>
+                <div class="flow-arrow-down" aria-hidden="true">↓</div>
+                <div class="flow-node gold">ficha funcional limpa</div>
               </div>
             </div>
             <div class="card-grid">
-              <div class="info-card"><h4>Requisitos cumulativos</h4><div class="chip-row"><span class="tag-item">Inexistência de dolo</span><span class="tag-item">Reparação de danos</span><span class="tag-item">Sem outro TAC nos últimos 2 anos</span></div></div>
-              <div class="info-card"><h4>Destaques</h4><p>A assinatura do termo não configura admissão de culpa. Após cumprimento integral, não gera antecedente disciplinar.</p></div>
+              <div class="info-card">
+                <div class="k-label">As regras de aplicação exigem</div>
+                <p>infração punível com advertência ou suspensão de até 30 dias</p>
+                <div class="k-label" style="margin-top:12px;">requisitos cumulativos</div>
+                <ul class="plain-list">
+                  <li>estar no exercício da função</li>
+                  <li>reparação de danos</li>
+                  <li>não possuir penalidade vigente</li>
+                  <li>não ter o servidor firmado outro TAC nos últimos dois anos</li>
+                </ul>
+              </div>
+              <div class="info-card"><p>Foi destacado que a assinatura do termo não configura admissão de culpa e que, após cumprimento integral, não gera antecedente disciplinar e extingue o processo.</p></div>
             </div>
-            <details class="expand"><summary>Outros pontos tratados</summary>
-              <div class="expand-body"><p>Competência, iniciativa (autoridade, comissão ou servidor), voluntariedade, estrutura das obrigações (com formulário próprio), proporcionalidade e fiscalizabilidade, mecanismos de acompanhamento, efeitos sobre o procedimento e a prescrição, e consequências do descumprimento.</p>
-              <p><strong>Ponto em aberto:</strong> parte da casuística de TACs — critérios, tipos de obrigação e boas práticas de obrigações de fazer — permaneceu indicada para aprofundamento futuro.</p></div>
+            <details class="expand"><summary>Demais pontos tratados</summary>
+              <div class="expand-body">
+                <p>Foram tratados ainda competência, iniciativa (autoridade, comissão ou servidor), voluntariedade, estrutura das obrigações (incluindo formulário próprio), proporcionalidade e mecanismos de acompanhamento, prazo de referência de dois anos entre termos sucessivos, efeitos sobre o procedimento e a prescrição, e consequências do descumprimento.</p>
+                <p>A avaliação pós-encontro registrou que parte da casuística de TACs — critérios, tipos de obrigação e boas práticas de obrigações de fazer — permaneceu como ponto não fechado, recomendando aprofundamento futuro.</p>
+              </div>
             </details>
           </div>
         </div>
       </section>
 
-      <!-- ============================= SLIDE 15 — ACIDENTES COM VIATURAS ============================= -->
-      <section class="slide" data-slide="15" id="slide-15">
+      <!-- 16 ACIDENTES ENVOLVENDO VIATURAS -->
+      <section class="slide" data-slide="16" id="slide-16" aria-label="Acidentes envolvendo viaturas">
         <div class="slide-inner">
-          <div class="slide-eyebrow"><span class="num">06</span> Conteúdo técnico</div>
+          <div class="slide-eyebrow"><span class="num">Seção 5.7</span></div>
           <h2 class="slide-title">Acidentes envolvendo viaturas</h2>
-          <p class="slide-lede">Fluxo operacional consolidado, com base na Instrução Normativa nº 203/2021-DG/PF.</p>
+          <p class="slide-lede">Foi consolidado o fluxo operacional aplicável a acidentes envolvendo viaturas policiais:</p>
           <div class="slide-body">
             <div class="stats-card">
-              <div class="step-list">
-                <div class="step-row"><div class="step-idx">1</div><div class="step-txt">Verificação da regularidade do uso da viatura (art. 21 — interesse do serviço)</div></div>
-                <div class="step-row"><div class="step-idx">2</div><div class="step-txt">Preservação do local</div></div>
-                <div class="step-row"><div class="step-idx">3</div><div class="step-txt">Comunicação à chefia e ao plantão</div></div>
-                <div class="step-row"><div class="step-idx">4</div><div class="step-txt">Registro da ocorrência</div></div>
-                <div class="step-row"><div class="step-idx">5</div><div class="step-txt">Perícia como regra geral</div></div>
-                <div class="step-row"><div class="step-idx">6</div><div class="step-txt">Instrução de Registro de Fato Disciplinar</div></div>
-                <div class="step-row"><div class="step-idx">7</div><div class="step-txt">Reconhecimento de responsabilidade e reparação de danos</div></div>
-                <div class="step-row"><div class="step-idx">8</div><div class="step-txt">Investigação Preliminar Sumária quando exigido aprofundamento</div></div>
+              <div class="step-list numbered">
+                <div class="step-row"><div class="step-idx">1</div><div class="step-txt">verificação da regularidade do uso da viatura, com referência à Instrução Normativa nº 203/2021-DG/PF</div></div>
+                <div class="step-row"><div class="step-idx">2</div><div class="step-txt">preservação do local</div></div>
+                <div class="step-row"><div class="step-idx">3</div><div class="step-txt">comunicação à chefia e ao plantão</div></div>
+                <div class="step-row"><div class="step-idx">4</div><div class="step-txt">registro da ocorrência</div></div>
+                <div class="step-row"><div class="step-idx">5</div><div class="step-txt">perícia como regra geral, com documentação específica nas hipóteses de retirada excepcional do veículo</div></div>
+                <div class="step-row"><div class="step-idx">6</div><div class="step-txt">instrução de Registro de Fato Disciplinar</div></div>
+                <div class="step-row"><div class="step-idx">7</div><div class="step-txt">reconhecimento de responsabilidade e reparação de danos</div></div>
+                <div class="step-row"><div class="step-idx">8</div><div class="step-txt">distinção entre responsabilidade patrimonial e disciplinar, como esferas autônomas</div></div>
+                <div class="step-row"><div class="step-idx">9</div><div class="step-txt">necessidade de Investigação Preliminar Sumária quando exigido aprofundamento</div></div>
+                <div class="step-row"><div class="step-idx">10</div><div class="step-txt">individualização jurídica da conduta conforme o regime aplicável</div></div>
               </div>
             </div>
             <div class="card-grid">
-              <div class="info-card"><h4>Art. 22 — transporte à residência</h4><p>Hipótese excepcional, condicionada a 3 requisitos cumulativos: serviço à administração, prorrogação da jornada no interesse da administração e autorização da chefia imediata.</p></div>
-              <div class="info-card"><h4>Destaques</h4><p>Responsabilidade patrimonial e disciplinar são esferas autônomas. A reparação voluntária do dano não equivale, por si só, a confissão de responsabilidade disciplinar.</p></div>
+              <div class="info-card"><div class="k-label">Instrução Normativa nº 203/2021-DG/PF</div><p>cujo art. 21 restringe o uso ao interesse do serviço, e cujo art. 22 disciplina hipóteses excepcionais de transporte à residência, condicionadas a três requisitos cumulativos (serviço à administração, prorrogação da jornada no interesse da administração e autorização da chefia imediata)</p></div>
+              <div class="info-card"><p>Foi destacado que a reparação voluntária do dano não equivale, por si só, a confissão de responsabilidade disciplinar.</p></div>
             </div>
+            <p class="fig-note">A avaliação pós-encontro cita acidentes e uso de viaturas entre os assuntos considerados pelos participantes como merecedores de aprofundamento futuro.</p>
           </div>
         </div>
       </section>
 
-      <!-- ============================= SLIDE 16 — CASOS DAS CPDs ============================= -->
-      <section class="slide" data-slide="16" id="slide-16">
+      <!-- 17 CASOS DAS CPDs -->
+      <section class="slide" data-slide="17" id="slide-17" aria-label="Casos das CPDs">
         <div class="slide-inner">
-          <div class="slide-eyebrow"><span class="num">07</span> Casos &amp; consolidação</div>
-          <h2 class="slide-title">Casos apresentados pelas CPDs</h2>
-          <p class="slide-lede">A programação contemplou casos das onze Comissões Permanentes de Disciplina, e a revisão da demandante confirmou os temas trabalhados por todas elas. Seis CPDs enviaram materiais de base que permitem aprofundamento adicional no relatório.</p>
+          <div class="slide-eyebrow"><span class="num">Seção 5.8</span></div>
+          <h2 class="slide-title">Casos das CPDs</h2>
+          <p class="slide-lede">A apresentação de casos concretos pelas Comissões Permanentes de Disciplina foi um dos eixos centrais do encontro, permitindo associar os conteúdos técnicos a situações reais da condução de processos. Foram enviados à organização os materiais de base de seis das onze CPDs.</p>
           <div class="slide-body">
             <div class="card-grid">
               <div class="info-card">
-                <h4>1ª CPD — Oitivas por videoconferência</h4>
-                <p>Mudança da redução a termo escrito para audiências virtuais gravadas: vantagens (celeridade, fidelidade do registro) e riscos (perda de controle sobre conteúdo integralmente gravado).</p>
+                <h4>1ª CPD</h4>
+                <p>Para a 1ª CPD, o caso tratou da mudança na forma de realização de oitivas em Processos Administrativos Disciplinares, da redução a termo escrito para audiências virtuais gravadas em tempo real, destacando vantagens — celeridade, fidelidade do registro — e riscos — perda de controle sobre conteúdo integralmente gravado.</p>
+                <details class="expand"><summary>Continuar</summary><div class="expand-body"><p>Foi descrita a prática adotada pela 1ª CPD de, no início de cada audiência, identificar todos os presentes, esclarecer a dinâmica do ato, informar que as perguntas partem primeiro dos membros da comissão, sem interrupções de advogados ou do servidor acusado, e reafirmar o caráter sigiloso da audiência. O caso concluiu destacando a irreversibilidade da videoconferência como inovação alinhada à eficiência e à economia processual, e a necessidade de redobrar o rigor procedimental, preservando o contraditório e a ampla defesa.</p></div></details>
               </div>
               <div class="info-card">
-                <h4>3ª CPD — Assédio sexual</h4>
-                <p>Definição normativa, progressividade das infrações disciplinares, aplicação subsidiária da Lei nº 8.112/1990 e deveres de urbanidade e moralidade administrativa.</p>
+                <h4>3ª CPD</h4>
+                <p>Pela 3ª CPD, o caso apresentado tratou de assédio sexual, de sua definição normativa, de sua relação com a progressividade das infrações disciplinares, da aplicação subsidiária da Lei nº 8.112/1990, dos deveres de urbanidade e moralidade administrativa e da distinção entre condutas de diferentes gravidades.</p>
               </div>
               <div class="info-card">
-                <h4>4ª CPD (Regional Nordeste) — Painel de 35 PADs</h4>
-                <p>21 em andamento (60%) · 14 relatados (40%). Por cargo: Delegados 13 (37,1%), Agentes 8 (22,9%), Escrivães e adm. 5 cada (14,3%), Peritos 4 (11,4%). Por natureza: serviço 26 (74,3%) · vida privada 9 (25,7%).</p>
-                <details class="expand"><summary>Ver estudos de caso e ciclo de saneamento</summary>
-                  <div class="expand-body">
-                    <p>Dois estudos de caso anonimizados sobre processos com longos períodos sem diligência (≈265 e 307 dias), analisando materialidade da demora, elemento subjetivo e continuidade normativa do dever de diligência.</p>
-                    <div class="step-list">
-                      <div class="step-row"><div class="step-idx">1</div><div class="step-txt">Identificação</div></div>
-                      <div class="step-row"><div class="step-idx">2</div><div class="step-txt">Notificação</div></div>
-                      <div class="step-row"><div class="step-idx">3</div><div class="step-txt">Prazo para correção</div></div>
-                      <div class="step-row"><div class="step-idx">4</div><div class="step-txt">Plano de saneamento</div></div>
-                      <div class="step-row"><div class="step-idx">5</div><div class="step-txt">Reavaliação</div></div>
-                      <div class="step-row"><div class="step-idx">6</div><div class="step-txt">Encaminhamento disciplinar — apenas diante de persistência injustificada</div></div>
-                    </div>
-                  </div>
-                </details>
+                <h4>4ª CPD (Regional Nordeste)</h4>
+                <p>A 4ª CPD (Regional Nordeste), em painel atualizado em 31/08/2026, apresentou a distribuição de 35 PADs entre os três membros da Comissão, discriminados apenas por situação processual, sem reprodução de números de processo: 21 PADs (60%) em andamento e 14 (40%) já relatados; por cargo, predominam Delegados (13, 37,1%), seguidos de Agentes (8, 22,9%), Escrivães e servidores administrativos (5 cada, 14,3%) e Peritos (4, 11,4%), sem casos envolvendo Papiloscopistas; por natureza, 26 PADs (74,28%) vinculam-se a atividade de serviço e 9 (25,71%) a atos da vida privada.</p>
+                <div class="k-label sub">situação processual</div>
+                <div class="bar-chart-row">
+                  <div class="bar-item"><div class="bar-header"><span>21 PADs (60%) em andamento</span></div><div class="bar-track"><div class="bar-fill gold" data-w="60"></div></div></div>
+                  <div class="bar-item"><div class="bar-header"><span>14 (40%) já relatados</span></div><div class="bar-track"><div class="bar-fill gold" data-w="40"></div></div></div>
+                </div>
+                <div class="k-label sub">por cargo</div>
+                <div class="bar-chart-row">
+                  <div class="bar-item"><div class="bar-header"><span>Delegados (13, 37,1%)</span></div><div class="bar-track"><div class="bar-fill gold" data-w="100"></div></div></div>
+                  <div class="bar-item"><div class="bar-header"><span>Agentes (8, 22,9%)</span></div><div class="bar-track"><div class="bar-fill gold" data-w="62"></div></div></div>
+                  <div class="bar-item"><div class="bar-header"><span>Escrivães e servidores administrativos (5 cada, 14,3%)</span></div><div class="bar-track"><div class="bar-fill gold" data-w="38"></div></div></div>
+                  <div class="bar-item"><div class="bar-header"><span>Peritos (4, 11,4%)</span></div><div class="bar-track"><div class="bar-fill gold" data-w="31"></div></div></div>
+                </div>
+                <div class="k-label sub">por natureza</div>
+                <div class="bar-chart-row">
+                  <div class="bar-item"><div class="bar-header"><span>26 PADs (74,28%) vinculam-se a atividade de serviço</span></div><div class="bar-track"><div class="bar-fill gold" data-w="74"></div></div></div>
+                  <div class="bar-item"><div class="bar-header"><span>9 (25,71%) a atos da vida privada</span></div><div class="bar-track"><div class="bar-fill gold" data-w="26"></div></div></div>
+                </div>
+                <details class="expand"><summary>Estudos de caso da 4ª CPD</summary><div class="expand-body"><p>Foram apresentados ainda, pela 4ª CPD, dois estudos de caso, anonimizados, sobre processos com longos períodos sem diligência — aproximadamente 265 e 307 dias —, organizados em torno de três questões técnicas: a materialidade da demora, o elemento subjetivo necessário à responsabilização e a continuidade normativa do dever de diligência após mudança legislativa. A partir dessa análise, foi estruturado um ciclo de tratamento de irregularidades saneáveis — identificação, notificação, prazo para correção, plano de saneamento, reavaliação e, apenas diante de persistência injustificada, encaminhamento disciplinar —, com registro, no caso concreto examinado, de providências de regularização e acompanhamento, sem instauração de novo procedimento a partir desse episódio.</p></div></details>
               </div>
               <div class="info-card">
-                <h4>5ª CPD — Acidente com viatura e TAC</h4>
-                <p>Acidente com viatura oficial e descumprimento de Termo de Ajustamento de Conduta previamente firmado, com responsabilização articulada a critérios de dosimetria.</p>
+                <h4>5ª CPD</h4>
+                <p>foi apresentado um caso concreto, anonimizado, envolvendo acidente com viatura oficial e descumprimento de Termo de Ajustamento de Conduta previamente firmado, com proposta de responsabilização articulada a critérios de dosimetria.</p>
               </div>
               <div class="info-card">
-                <h4>6ª CPD — Relatório complementar</h4>
-                <p>Ausência de previsão normativa para elaboração de novo relatório policial em determinada situação processual, com registro de correção posterior.</p>
+                <h4>6ª CPD</h4>
+                <p>Para a 6ª CPD, o caso tratou da ausência de previsão normativa para elaboração de novo relatório policial em determinada situação processual, com registro de correção posterior.</p>
               </div>
               <div class="info-card">
-                <h4>11ª CPD — Atividade paralela à função policial</h4>
-                <p>Distinção entre os tipos da Lei nº 4.878/1965 e da Lei nº 15.047/2024, que restringiu o alcance ao exigir cumulativamente "remunerada" e "incompatível".</p>
-                <details class="expand"><summary>Ver elementos do novo tipo e classificação de atividades</summary>
-                  <div class="expand-body">
-                    <p>Direito intertemporal: regra geral do <em>tempus regit actum</em>, ressalvada a retroatividade benéfica (<em>abolitio disciplinar</em>) para condutas anteriores a 17/12/2024.</p>
-                    <div class="chip-row">
-                      <span class="tag-item">Exercer atividade — pressupõe habitualidade</span>
-                      <span class="tag-item">A qualquer título — não restringe o tipo</span>
-                      <span class="tag-item">Remunerada — exige vantagem financeira comprovada</span>
-                      <span class="tag-item">Incompatível com a atividade policial</span>
-                    </div>
-                    <p style="margin-top:8px;">Atividades classificadas como incompatíveis (vedação legal ou conflito de interesses), compatíveis (sociedade em empresa privada sem gerência, locação de bens próprios) e limítrofes (exigem análise do caso concreto).</p>
-                  </div>
-                </details>
+                <h4>11ª CPD</h4>
+                <p>Pela presidência da 11ª CPD, foi apresentado conteúdo extenso sobre atividade paralela à função policial, preparado pela DPF Tathyana Chamon Machado (SR/PF/ES) para os casos julgados sob condutas praticadas na vigência da Lei nº 4.878/1965. Foram distinguidos os tipos disciplinares da Lei nº 4.878/1965 (art. 43, LIII c/c art. 48, II — exercer, a qualquer título, atividade estranha à de seu cargo) e da Lei nº 15.047/2024 (art. 15, III — exercer, a qualquer título, atividade remunerada incompatível com a atividade policial), destacando que a lei nova restringiu o alcance do tipo ao exigir cumulativamente os elementos “remunerada” e “incompatível”.</p>
+                <details class="expand"><summary>Continuar</summary><div class="expand-body"><p>Foi tratado o direito intertemporal aplicável a condutas anteriores a 17/12/2024 — a regra geral do tempus regit actum, ressalvada a retroatividade benéfica (abolitio disciplinar) —, e desenvolvido cada elemento do novo tipo: “exercer atividade” (pressupõe habitualidade), “a qualquer título” (não restringe o tipo de atividade), “remunerada” (exige comprovação de vantagem financeira) e “incompatível com a atividade policial”. Foram classificadas atividades incompatíveis (por vedação legal expressa ou conflito de interesses), compatíveis (sociedade em empresa privada sem gerência, locação de bens próprios) e limítrofes, que exigem análise do caso concreto. O caso concluiu reafirmando a ocorrência de abolitio disciplinar para parte das condutas antes tipificadas pela lei antiga.</p></div></details>
               </div>
               <div class="info-card">
-                <h4>Demais casos confirmados na revisão</h4>
-                <p><strong>2ª CPD:</strong> incidente de sanidade · <strong>7ª CPD:</strong> atividade compatível com a função policial · <strong>8ª CPD:</strong> atividade incompatível · <strong>9ª CPD:</strong> incidente de sanidade · <strong>10ª CPD:</strong> situação de policial em missão no exterior sem intenção de retornar.</p>
+                <h4>2ª, 7ª, 8ª, 9ª e 10ª CPDs</h4>
+                <p>As 2ª, 7ª, 8ª, 9ª e 10ª CPDs discutiram casos concretos mais valorizados pelos participantes.</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ============================= SLIDE 17 — BOAS PRÁTICAS ============================= -->
-      <section class="slide" data-slide="17" id="slide-17">
+      <!-- 18 BOAS PRÁTICAS E TEMAS JURÍDICOS RECORRENTES -->
+      <section class="slide" data-slide="18" id="slide-18" aria-label="Boas práticas e temas jurídicos recorrentes">
         <div class="slide-inner">
-          <div class="slide-eyebrow"><span class="num">07</span> Casos &amp; consolidação</div>
+          <div class="slide-eyebrow"><span class="num">Seção 5.9</span></div>
           <h2 class="slide-title">Boas práticas e temas jurídicos recorrentes</h2>
-          <p class="slide-lede">Bloco de maior densidade de debate do encontro — nove dos onze entendimentos consolidados guardam correspondência temática direta com estes assuntos.</p>
+          <p class="slide-lede">O bloco de Discussão de Pontos Específicos e Alteração da Legislação Disciplinar reuniu eixos de debate organizados tematicamente — entre eles um eixo sobre atos da vida privada —, cobrindo: alteração de tipificação; aditamento de portaria; prescrição; incidente de sanidade; prazo da IPS; alcance da infração de uso de arma de fogo; tratamento de pessoas; atividade paralela; dedicação exclusiva; gestão de pessoa jurídica; e palestras sem ônus. Este foi o bloco de maior densidade de debate do encontro: nove dos onze entendimentos consolidados guardam correspondência temática direta com os assuntos ali tratados.</p>
           <div class="slide-body">
             <div class="chip-row">
-              <span class="tag-item emph">Alteração de tipificação</span>
-              <span class="tag-item emph">Aditamento de portaria</span>
-              <span class="tag-item emph">Prescrição</span>
-              <span class="tag-item emph">Incidente de sanidade</span>
-              <span class="tag-item emph">Prazo da IPS</span>
-              <span class="tag-item">Alcance da infração de uso de arma de fogo</span>
-              <span class="tag-item">Tratamento de pessoas</span>
-              <span class="tag-item">Atividade paralela</span>
-              <span class="tag-item">Dedicação exclusiva</span>
-              <span class="tag-item">Gestão de pessoa jurídica</span>
-              <span class="tag-item">Palestras sem ônus</span>
-              <span class="tag-item">Atos da vida privada</span>
+              <span class="tag-item static">alteração de tipificação</span>
+              <span class="tag-item static">aditamento de portaria</span>
+              <span class="tag-item static">prescrição</span>
+              <span class="tag-item static">incidente de sanidade</span>
+              <span class="tag-item static">prazo da IPS</span>
+              <span class="tag-item static">alcance da infração de uso de arma de fogo</span>
+              <span class="tag-item static">tratamento de pessoas</span>
+              <span class="tag-item static">atividade paralela</span>
+              <span class="tag-item static">dedicação exclusiva</span>
+              <span class="tag-item static">gestão de pessoa jurídica</span>
+              <span class="tag-item static">palestras sem ônus</span>
+              <span class="tag-item static">um eixo sobre atos da vida privada</span>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ============================= SLIDE 18 — ONZE ENTENDIMENTOS ============================= -->
-      <section class="slide" data-slide="18" id="slide-18">
+      <!-- 19 DEBATES E ENTENDIMENTOS CONSOLIDADOS -->
+      <section class="slide" data-slide="19" id="slide-19" aria-label="Debates e entendimentos consolidados">
         <div class="slide-inner">
-          <div class="slide-eyebrow"><span class="num">07</span> Casos &amp; consolidação</div>
-          <h2 class="slide-title">Os onze entendimentos consolidados</h2>
-          <p class="slide-lede">Resultado central do encontro do ponto de vista da uniformização de procedimentos. Ainda não acompanhados de plano de ação formal — serão buscados pareceres da DELP para embasar sua adoção.</p>
+          <div class="slide-eyebrow"><span class="num">Seção 6</span></div>
+          <h2 class="slide-title">Debates e entendimentos consolidados</h2>
+          <p class="slide-lede">As atividades do encontro combinaram exposições técnicas e discussão de casos e questões recorrentes da área disciplinar. Os onze entendimentos organizam-se em três grupos temáticos:</p>
           <div class="slide-body">
-            <div class="filter-track">
-              <button class="filter-pill active" onclick="setGrupo('all',this)">Todos (11)</button>
-              <button class="filter-pill" onclick="setGrupo('A',this)">Grupo A — Atividades externas ao cargo</button>
-              <button class="filter-pill" onclick="setGrupo('B',this)">Grupo B — Regime normativo geral</button>
-              <button class="filter-pill" onclick="setGrupo('C',this)">Grupo C — Procedimento disciplinar</button>
-            </div>
-            <div class="entendimentos-grid" id="entendimentosGrid">
-
-              <div class="entendimento-card" data-grupo="A"><div class="entendimento-header"><span class="entendimento-num">01</span><span class="grau-badge g-b">Grupo A</span></div><div class="entendimento-tema">Magistério</div><div class="entendimento-quote">O exercício do magistério sem prévia autorização configura descumprimento da norma prevista na IN nº 177/2020.</div><div class="entendimento-orientacao"><strong>Repercussão:</strong> obter autorização prévia para o exercício do magistério.</div></div>
-
-              <div class="entendimento-card" data-grupo="B"><div class="entendimento-header"><span class="entendimento-num">02</span><span class="grau-badge g-c">Grupo B</span></div><div class="entendimento-tema">Aplicação subsidiária da legislação geral</div><div class="entendimento-quote">A Lei nº 8.112/1990 continua aplicável de maneira subsidiária, sendo a Lei nº 15.047/2024 a fonte primária. Não há incompatibilidade entre os diplomas, mas não é possível empregar o art. 116 da Lei nº 8.112/1990 combinado ao art. 5º, I, da Lei nº 15.047/2024.</div><div class="entendimento-orientacao"><strong>Repercussão:</strong> não combinar os dois dispositivos para criar enquadramento não previsto na lei específica.</div></div>
-
-              <div class="entendimento-card" data-grupo="A"><div class="entendimento-header"><span class="entendimento-num">03</span><span class="grau-badge g-b">Grupo A</span></div><div class="entendimento-tema">Dedicação exclusiva</div><div class="entendimento-quote">O art. 4º da Lei nº 4.878/1965 não foi revogado, permanecendo a incompatibilidade do serviço policial com qualquer atividade remunerada, exceto magistério, atividade literária/cultural e função de síndico do edifício em que reside.</div><div class="entendimento-orientacao"><strong>Repercussão:</strong> verificar compatibilidade e eventual necessidade de consulta antes do exercício de atividade remunerada.</div></div>
-
-              <div class="entendimento-card" data-grupo="A"><div class="entendimento-header"><span class="entendimento-num">04</span><span class="grau-badge g-b">Grupo A</span></div><div class="entendimento-tema">Gestão de pessoa jurídica</div><div class="entendimento-quote">É vedada a gestão de pessoas jurídicas, ainda que se trate de entidade filantrópica.</div><div class="entendimento-orientacao"><strong>Repercussão:</strong> a vedação aplica-se independentemente da natureza da pessoa jurídica.</div></div>
-
-              <div class="entendimento-card" data-grupo="A"><div class="entendimento-header"><span class="entendimento-num">05</span><span class="grau-badge g-b">Grupo A</span></div><div class="entendimento-tema">Palestras sem ônus</div><div class="entendimento-quote">Palestras, ainda que sem ônus, necessitam de autorização específica da administração (IN nº 177).</div><div class="entendimento-orientacao"><strong>Repercussão:</strong> solicitar autorização específica antes de proferir palestra, mesmo sem remuneração.</div></div>
-
-              <div class="entendimento-card" data-grupo="B"><div class="entendimento-header"><span class="entendimento-num">06</span><span class="grau-badge g-c">Grupo B</span></div><div class="entendimento-tema">Código de Ética</div><div class="entendimento-quote">Infração ao Código de Ética não gera, por si só, repercussão disciplinar, por se tratar de infração, processo e penalidade autônomos.</div><div class="entendimento-orientacao"><strong>Repercussão:</strong> as duas esferas são tratadas de forma autônoma, sem repercussão automática de uma sobre a outra.</div></div>
-
-              <div class="entendimento-card" data-grupo="C"><div class="entendimento-header"><span class="entendimento-num">07</span><span class="grau-badge g-a">Grupo C</span></div><div class="entendimento-tema">Incidente de sanidade</div><div class="entendimento-quote">Deve ser instaurado incidente de sanidade e/ou notificação de incidente crítico tão logo seja verificada possível situação, inclusive no curso de Investigação Preliminar Sumária.</div><div class="entendimento-orientacao"><strong>Repercussão:</strong> instauração imediata do incidente ou notificação quando identificada a situação.</div></div>
-
-              <div class="entendimento-card" data-grupo="C"><div class="entendimento-header"><span class="entendimento-num">08</span><span class="grau-badge g-a">Grupo C</span></div><div class="entendimento-tema">Sigilo e acesso ao PAD</div><div class="entendimento-quote">O PAD tramita em sigilo. Acesso amplo apenas ao investigado e a seu advogado; testemunhas recebem informações mínimas; a vítima é informada apenas sobre a existência ou não de instauração. Após a decisão da autoridade instauradora, com base na LAI e na LGPD, dados podem ser fornecidos a terceiros legitimados, excluídos os dados sensíveis.</div><div class="entendimento-orientacao"><strong>Repercussão:</strong> anonimizar dados sensíveis antes de qualquer fornecimento posterior à decisão.</div></div>
-
-              <div class="entendimento-card" data-grupo="C"><div class="entendimento-header"><span class="entendimento-num">09</span><span class="grau-badge g-a">Grupo C</span></div><div class="entendimento-tema">Aditamento de portaria</div><div class="entendimento-quote">Não é possível aditar a portaria de instauração para incluir nova tipificação disciplinar.</div><div class="entendimento-orientacao"><strong>Repercussão:</strong> a vedação preserva a delimitação original da portaria de instauração.</div></div>
-
-              <div class="entendimento-card" data-grupo="C"><div class="entendimento-header"><span class="entendimento-num">10</span><span class="grau-badge g-a">Grupo C</span></div><div class="entendimento-tema">Prazo da IPS</div><div class="entendimento-quote">O prazo de 90 dias para conclusão da Investigação Preliminar Sumária não pode ser prorrogado, reconhecendo-se, porém, que se trata de prazo impróprio.</div><div class="entendimento-orientacao"><strong>Repercussão:</strong> observar o prazo de 90 dias como referência, sem previsão de prorrogação formal.</div></div>
-
-              <div class="entendimento-card" data-grupo="C"><div class="entendimento-header"><span class="entendimento-num">11</span><span class="grau-badge g-a">Grupo C</span></div><div class="entendimento-tema">Violência doméstica e familiar</div><div class="entendimento-quote">Em casos relacionados a violência doméstica e familiar, deve ser instaurada Investigação Preliminar Sumária ou Registro de Fato Disciplinar, com o objetivo de apurar possível repercussão disciplinar.</div><div class="entendimento-orientacao"><strong>Repercussão:</strong> instaurar IPS ou RDF quando configurada a hipótese.</div></div>
-
-            </div>
+            <div class="filter-track" role="tablist"><button class="filter-pill active" data-grupo="all">Todos</button><button class="filter-pill" data-grupo="A">A — Atividades externas ao cargo</button><button class="filter-pill" data-grupo="B">B — Regime normativo geral</button><button class="filter-pill" data-grupo="C">C — Procedimento disciplinar</button></div>
+            <div class="entendimentos-grid" id="entendimentosGrid"><div class="entendimento-card" data-grupo="A"><div class="entendimento-header"><span class="entendimento-num">1</span><span class="grupo-badge">Grupo A</span></div><div class="entendimento-tema">Magistério</div><div class="entendimento-quote">O exercício do magistério sem prévia autorização configura descumprimento da norma prevista na IN nº 177/2020</div><div class="entendimento-orientacao"><strong>Repercussão prática:</strong> Obter autorização prévia para o exercício do magistério</div><div class="entendimento-corresp"><strong>Bloco(s) da programação com correspondência temática:</strong> Tipificação e Responsabilização (dia 9); Pontos Específicos (dia 10)</div></div><div class="entendimento-card" data-grupo="B"><div class="entendimento-header"><span class="entendimento-num">2</span><span class="grupo-badge">Grupo B</span></div><div class="entendimento-tema">Aplicação subsidiária da legislação geral</div><div class="entendimento-quote">A Lei nº 8.112/1990 continua aplicável aos servidores policiais de maneira subsidiária (art. 62 da Lei nº 4.878/1965), sendo a Lei nº 15.047/2024 a fonte primária. Não há incompatibilidade entre os diplomas, mas não é possível empregar o art. 116 da Lei nº 8.112/1990 como norma descumprida do art. 5º, I, da Lei nº 15.047/2024, de forma combinada</div><div class="entendimento-orientacao"><strong>Repercussão prática:</strong> Não combinar os dois dispositivos para criar enquadramento não previsto na lei específica</div><div class="entendimento-corresp"><strong>Bloco(s) da programação com correspondência temática:</strong> Tipificação e Responsabilização (dia 9); Pontos Específicos (dia 10)</div></div><div class="entendimento-card" data-grupo="A"><div class="entendimento-header"><span class="entendimento-num">3</span><span class="grupo-badge">Grupo A</span></div><div class="entendimento-tema">Dedicação exclusiva</div><div class="entendimento-quote">O art. 4º da Lei nº 4.878/1965 não foi revogado, permanecendo a incompatibilidade do serviço policial com qualquer atividade remunerada, com exceção apenas do magistério, de atividades literária e cultural e da função de síndico do edifício em que reside</div><div class="entendimento-orientacao"><strong>Repercussão prática:</strong> Verificar compatibilidade e eventual necessidade de consulta antes do exercício de qualquer atividade remunerada</div><div class="entendimento-corresp"><strong>Bloco(s) da programação com correspondência temática:</strong> Pontos Específicos (dia 10)</div></div><div class="entendimento-card" data-grupo="A"><div class="entendimento-header"><span class="entendimento-num">4</span><span class="grupo-badge">Grupo A</span></div><div class="entendimento-tema">Gestão de pessoa jurídica</div><div class="entendimento-quote">É vedada a gestão de pessoas jurídicas, ainda que se trate de entidade filantrópica</div><div class="entendimento-orientacao"><strong>Repercussão prática:</strong> A vedação aplica-se independentemente da natureza da pessoa jurídica</div><div class="entendimento-corresp"><strong>Bloco(s) da programação com correspondência temática:</strong> Pontos Específicos (dia 10)</div></div><div class="entendimento-card" data-grupo="A"><div class="entendimento-header"><span class="entendimento-num">5</span><span class="grupo-badge">Grupo A</span></div><div class="entendimento-tema">Palestras sem ônus</div><div class="entendimento-quote">Palestras, ainda que sem ônus, necessitam de autorização específica da administração (IN nº 177)</div><div class="entendimento-orientacao"><strong>Repercussão prática:</strong> Solicitar autorização específica antes de proferir palestra, mesmo sem remuneração</div><div class="entendimento-corresp"><strong>Bloco(s) da programação com correspondência temática:</strong> Pontos Específicos (dia 10)</div></div><div class="entendimento-card" data-grupo="B"><div class="entendimento-header"><span class="entendimento-num">6</span><span class="grupo-badge">Grupo B</span></div><div class="entendimento-tema">Código de Ética</div><div class="entendimento-quote">Infração ao Código de Ética não gera, por si só, repercussão disciplinar, por se tratar de infração, processo e penalidade autônomos</div><div class="entendimento-orientacao"><strong>Repercussão prática:</strong> As duas esferas são tratadas de forma autônoma, sem repercussão automática de uma sobre a outra</div><div class="entendimento-corresp"><strong>Bloco(s) da programação com correspondência temática:</strong> Tipificação e Responsabilização (dia 9); Pontos Específicos (dia 10)</div></div><div class="entendimento-card" data-grupo="C"><div class="entendimento-header"><span class="entendimento-num">7</span><span class="grupo-badge">Grupo C</span></div><div class="entendimento-tema">Incidente de sanidade</div><div class="entendimento-quote">Deve ser instaurado incidente de sanidade e/ou notificação de incidente crítico tão logo seja verificada possível situação, inclusive no curso de Investigação Preliminar Sumária</div><div class="entendimento-orientacao"><strong>Repercussão prática:</strong> Instauração imediata do incidente ou notificação quando identificada a situação</div><div class="entendimento-corresp"><strong>Bloco(s) da programação com correspondência temática:</strong> Pontos Específicos (dia 10)</div></div><div class="entendimento-card" data-grupo="C"><div class="entendimento-header"><span class="entendimento-num">8</span><span class="grupo-badge">Grupo C</span></div><div class="entendimento-tema">Sigilo e acesso ao PAD</div><div class="entendimento-quote">O PAD tramita em sigilo. O acesso é conferido apenas ao investigado e a seu advogado, para exercício do contraditório e da ampla defesa. Às testemunhas são fornecidas apenas as informações mínimas necessárias para contextualizar sua participação. A vítima é informada apenas sobre a existência ou não de instauração do PAD. Após a decisão da autoridade instauradora, com fundamento na LAI e na LGPD, os dados podem ser fornecidos a terceiros legitimados, desde que excluídos os dados sensíveis, mediante anonimização</div><div class="entendimento-orientacao"><strong>Repercussão prática:</strong> Anonimizar dados sensíveis antes de qualquer fornecimento posterior à decisão</div><div class="entendimento-corresp"><strong>Bloco(s) da programação com correspondência temática:</strong> Acesso, Sigilo e Proteção das Informações (dia 9)</div></div><div class="entendimento-card" data-grupo="C"><div class="entendimento-header"><span class="entendimento-num">9</span><span class="grupo-badge">Grupo C</span></div><div class="entendimento-tema">Aditamento de portaria</div><div class="entendimento-quote">Não é possível aditar a portaria de instauração para incluir nova tipificação disciplinar</div><div class="entendimento-orientacao"><strong>Repercussão prática:</strong> A vedação preserva a delimitação original da portaria de instauração</div><div class="entendimento-corresp"><strong>Bloco(s) da programação com correspondência temática:</strong> Indiciamento e Prescrição (dia 10); Pontos Específicos (dia 10)</div></div><div class="entendimento-card" data-grupo="C"><div class="entendimento-header"><span class="entendimento-num">10</span><span class="grupo-badge">Grupo C</span></div><div class="entendimento-tema">Prazo da IPS</div><div class="entendimento-quote">O prazo de 90 dias para conclusão da Investigação Preliminar Sumária não pode ser prorrogado, reconhecendo-se, porém, que se trata de prazo impróprio</div><div class="entendimento-orientacao"><strong>Repercussão prática:</strong> Observar o prazo de 90 dias como referência, sem previsão de prorrogação formal</div><div class="entendimento-corresp"><strong>Bloco(s) da programação com correspondência temática:</strong> Indiciamento e Prescrição (dia 10); Pontos Específicos (dia 10)</div></div><div class="entendimento-card" data-grupo="C"><div class="entendimento-header"><span class="entendimento-num">11</span><span class="grupo-badge">Grupo C</span></div><div class="entendimento-tema">Violência doméstica e familiar</div><div class="entendimento-quote">Em casos relacionados a violência doméstica e familiar, deve ser instaurada Investigação Preliminar Sumária ou Registro de Fato Disciplinar, com o objetivo de apurar possível repercussão disciplinar</div><div class="entendimento-orientacao"><strong>Repercussão prática:</strong> Instaurar IPS ou RDF quando configurada a hipótese</div><div class="entendimento-corresp"><strong>Bloco(s) da programação com correspondência temática:</strong> Não associado a bloco específico da programação</div></div></div>
+            <div class="info-card"><p>Os entendimentos consolidados não foram acompanhados, no âmbito dos registros do encontro, de plano de ação com definição de responsáveis, prazos e produtos, porém serão buscados ou demandados pareceres da DELP para embasar a adoção dos entendimentos.</p></div>
           </div>
         </div>
       </section>
 
-      <!-- ============================= SLIDE 19 — AVALIAÇÃO ============================= -->
-      <section class="slide" data-slide="19" id="slide-19">
+      <!-- 20 AVALIAÇÃO DO ENCONTRO E RESULTADOS ALCANÇADOS -->
+      <section class="slide" data-slide="20" id="slide-20" aria-label="Avaliação do encontro e resultados alcançados">
         <div class="slide-inner">
-          <div class="slide-eyebrow"><span class="num">08</span> Resultados</div>
+          <div class="slide-eyebrow"><span class="num">Seção 7</span></div>
           <h2 class="slide-title">Avaliação do encontro e resultados alcançados</h2>
-          <p class="slide-lede">As questões fechadas reúnem até 15 respostas, enquanto as questões abertas apresentam adesão variável. Os resultados registram percepção positiva do encontro e indicam, ao mesmo tempo, temas que merecem continuidade e maior tempo de discussão.</p>
+          <p class="slide-lede">As avaliações registradas em formulário enviado pela coordenação após o evento destacaram a troca de experiências entre unidades, a utilidade da discussão de casos concretos e a relevância dos temas selecionados.</p>
           <div class="slide-body">
-            <div class="kpi-grid impact-kpis">
-              <div class="kpi-card emerald"><div class="kpi-label">Presença declarada</div><div class="kpi-value">93%</div><div class="kpi-sub">14 “sim” em 15 respostas</div></div>
-              <div class="kpi-card"><div class="kpi-label">Avaliação geral</div><div class="kpi-value">80%</div><div class="kpi-sub">12 “Excelente” · 3 “Bom”</div></div>
-              <div class="kpi-card silver"><div class="kpi-label">Contribuição ao alinhamento</div><div class="kpi-value">93%</div><div class="kpi-sub">14 respostas positivas em 15</div></div>
-              <div class="kpi-card rose"><div class="kpi-label">Duração considerada adequada</div><div class="kpi-value">40%</div><div class="kpi-sub">6 sim · 5 não · 4 outras</div></div>
-            </div>
-            <div class="card-grid">
-              <div class="info-card"><h4>A. Integração e intercâmbio técnico</h4><p>As respostas destacaram troca de experiências, integração entre participantes e utilidade da discussão de situações concretas.</p></div>
-              <div class="info-card"><h4>B. Uniformização de entendimentos</h4><p>Onze entendimentos técnicos foram consolidados sobre temas recorrentes da atividade disciplinar.</p></div>
-              <div class="info-card"><h4>C. Qualificação técnica e casos práticos</h4><p>A programação contemplou casos das onze CPDs; seis delas enviaram materiais de base que possibilitaram detalhamento adicional.</p></div>
-              <div class="info-card"><h4>D. Temas para continuidade</h4><p>TAC, acidentes e viaturas, improbidade administrativa, responsabilidade pessoal x funcional, assédio, prescrição e uso de inteligência artificial na gestão de procedimentos.</p></div>
-            </div>
-            <div class="info-card perception-card">
-              <div class="k-label">Percepção qualitativa</div>
-              <p>A <strong style="color:#fff;">troca de experiências</strong>, a integração e os casos práticos aparecem entre os aspectos mais valorizados. O <strong style="color:#fff;">tempo disponível</strong> foi o ponto de atenção mais recorrente.</p>
-            </div>
-            <div class="table-responsive-wrapper">
-              <table class="styled-table">
-                <thead><tr><th>Dimensão</th><th>Resultado observado</th><th>Ponto de atenção</th></tr></thead>
-                <tbody>
-                  <tr><td>Integração técnica</td><td>Troca de experiências entre participantes de diferentes unidades e regiões</td><td>A avaliação não substitui lista consolidada de presença</td></tr>
-                  <tr><td>Uniformização de entendimentos</td><td>Onze entendimentos técnicos consolidados</td><td>Ainda não formalizados como enunciados aprovados</td></tr>
-                  <tr><td>Casos práticos das CPDs</td><td>Casos contemplados para as onze CPDs; seis com material de base detalhado</td><td>O nível de detalhamento documental varia por comissão</td></tr>
-                  <tr><td>Termo de Ajustamento de Conduta</td><td>Estrutura, requisitos e efeitos tratados e debatidos</td><td>Casuística e obrigações de fazer demandam aprofundamento</td></tr>
-                  <tr><td>Acidentes com viaturas</td><td>Fluxo operacional apresentado de forma consolidada</td><td>Tema indicado para aprofundamento futuro</td></tr>
-                  <tr><td>Continuidade da iniciativa</td><td>Uma avaliação menciona expectativa de novo encontro em 2027</td><td>Sem formalização de periodicidade no conjunto documental</td></tr>
-                </tbody>
-              </table>
-            </div>
+            <div class="card-grid"><div class="info-card"><h4>A. Integração e intercâmbio técnico</h4><p>As avaliações pós-encontro registraram troca de experiências entre participantes de diferentes unidades e regiões. O planejamento do encontro contemplava representantes dos 27 Núcleos de Disciplina e das 11 Comissões Permanentes de Disciplina.</p></div><div class="info-card"><h4>B. Uniformização e alinhamento de entendimentos</h4><p>O processo de debate resultou na consolidação de onze entendimentos técnicos sobre temas recorrentes da atividade disciplinar, cobrindo atividades externas ao cargo, regime normativo geral e procedimento disciplinar.</p></div><div class="info-card"><h4>C. Qualificação técnica e tratamento de casos práticos</h4><p>Foram apresentados casos concretos por seis das onze CPDs, associando os conteúdos técnicos e jurídicos a situações reais da condução de processos disciplinares, com destaque para os painéis de diagnóstico do estoque de PADs e da 4ª CPD.</p></div><div class="info-card"><h4>D. Temas que demandam continuidade ou aprofundamento</h4><p>A avaliação pós-encontro indicou temas para aprofundamento em edições futuras: casuística de TAC, acidentes e uso de viaturas, improbidade administrativa, responsabilidade pessoal versus funcional, assédio sexual e moral, prescrição e uso de inteligência artificial na análise e gestão de procedimentos disciplinares. Esses temas são apontados como pauta para continuidade, e não como decisão formal da administração.</p></div></div>
+            <div class="table-responsive-wrapper"><table class="styled-table"><thead><tr><th>Dimensão</th><th>Resultado observado</th><th>Ponto de atenção</th></tr></thead><tbody><tr><td>Integração técnica</td><td>Troca de experiências entre participantes de diferentes unidades e regiões</td><td>A avaliação disponível reúne cinco respostas e não permite mensurar a percepção do conjunto dos participantes</td></tr><tr><td>Uniformização de entendimentos</td><td>Consolidação de onze entendimentos técnicos sobre temas recorrentes da atividade disciplinar</td><td>Entendimentos ainda não formalizados como enunciados aprovados</td></tr><tr><td>Casos práticos das CPDs</td><td>A discussão de casos concretos foi destacada positivamente na avaliação; o relatório desenvolve conteúdo específico referente a seis CPDs</td><td>A programação contemplava casos das onze CPDs</td></tr><tr><td>Termo de Ajustamento de Conduta</td><td>Conteúdo tratado e debatido, com estrutura, requisitos e efeitos alinhados</td><td>Casuística e obrigações de fazer demandam aprofundamento</td></tr><tr><td>Acidentes com viaturas</td><td>Fluxo operacional apresentado de forma consolidada</td><td>Tema indicado pelos participantes para aprofundamento</td></tr><tr><td>Continuidade da iniciativa</td><td>Uma das avaliações menciona expectativa de novo encontro em 2027</td><td>Não há formalização de periodicidade no conjunto documental considerado</td></tr></tbody></table></div>
+            <p class="fig-note"><a class="xref" href="#s-21" data-go="21">Ver resultados do formulário de avaliação</a></p>
           </div>
         </div>
       </section>
 
-      <!-- ============================= SLIDE 20 — TEMAS PARA APROFUNDAR ============================= -->
-      <section class="slide" data-slide="20" id="slide-20">
+      <!-- 21 RESULTADOS DO FORMULÁRIO -->
+      <section class="slide" data-slide="21" id="slide-21" aria-label="Resultados do formulário de avaliação">
         <div class="slide-inner">
-          <div class="slide-eyebrow"><span class="num">08</span> Resultados</div>
+          <div class="slide-eyebrow"><span class="num">Seção 7</span></div>
+          <h2 class="slide-title">Resultados do formulário de avaliação</h2>
+          <p class="slide-lede">formulário enviado pela coordenação após o evento</p>
+          <div class="slide-body"><div class="card-grid survey-grid"><div class="q-card"><div class="q-num">1</div><h4 class="q-text">Você esteve presente ao nosso Encontro de Alinhamento Disciplinar, realizado na ANP, no período de 08 a 11/09/2026?</h4><div class="bar-chart-row"><div class="bar-item"><div class="bar-header"><span>Sim</span><strong>14 · 93%</strong></div><div class="bar-track"><div class="bar-fill gold" data-w="93"></div></div></div><div class="bar-item"><div class="bar-header"><span>Não</span><strong>1 · 7%</strong></div><div class="bar-track"><div class="bar-fill gold" data-w="7"></div></div></div></div></div><div class="q-card"><div class="q-num">2</div><h4 class="q-text">Como você avalia o encontro técnico de alinhamento disciplinar como um todo?</h4><div class="bar-chart-row"><div class="bar-item"><div class="bar-header"><span>Ruim</span><strong>0</strong></div><div class="bar-track"><div class="bar-fill gold" data-w="0"></div></div></div><div class="bar-item"><div class="bar-header"><span>Bom</span><strong>3 · 20%</strong></div><div class="bar-track"><div class="bar-fill gold" data-w="20"></div></div></div><div class="bar-item"><div class="bar-header"><span>Excelente</span><strong>12 · 80%</strong></div><div class="bar-track"><div class="bar-fill gold" data-w="80"></div></div></div></div></div><div class="q-card"><div class="q-num">3</div><h4 class="q-text">Os conteúdos temáticos foram apresentados e debatidos de modo satisfatório?</h4><div class="bar-chart-row"><div class="bar-item"><div class="bar-header"><span>Sim</span><strong>10 · 67%</strong></div><div class="bar-track"><div class="bar-fill gold" data-w="67"></div></div></div><div class="bar-item"><div class="bar-header"><span>Em média</span><strong>3 · 20%</strong></div><div class="bar-track"><div class="bar-fill gold" data-w="20"></div></div></div><div class="bar-item"><div class="bar-header"><span>Não</span><strong>0</strong></div><div class="bar-track"><div class="bar-fill gold" data-w="0"></div></div></div><div class="bar-item"><div class="bar-header"><span>Outra</span><strong>2 · 13%</strong></div><div class="bar-track"><div class="bar-fill gold" data-w="13"></div></div></div></div></div><div class="q-card"><div class="q-num">4</div><h4 class="q-text">O encontro contribuiu para o alinhamento de entendimentos, procedimentos e práticas da equipe?</h4><div class="bar-chart-row"><div class="bar-item"><div class="bar-header"><span>Sim</span><strong>14 · 93%</strong></div><div class="bar-track"><div class="bar-fill gold" data-w="93"></div></div></div><div class="bar-item"><div class="bar-header"><span>Não</span><strong>0</strong></div><div class="bar-track"><div class="bar-fill gold" data-w="0"></div></div></div><div class="bar-item"><div class="bar-header"><span>Outra</span><strong>1 · 7%</strong></div><div class="bar-track"><div class="bar-fill gold" data-w="7"></div></div></div></div></div><div class="q-card"><div class="q-num">5</div><h4 class="q-text">A duração do encontro e das palestras foi adequada?</h4><div class="bar-chart-row"><div class="bar-item"><div class="bar-header"><span>Sim</span><strong>6 · 40%</strong></div><div class="bar-track"><div class="bar-fill gold" data-w="40"></div></div></div><div class="bar-item"><div class="bar-header"><span>Não</span><strong>5 · 33%</strong></div><div class="bar-track"><div class="bar-fill gold" data-w="33"></div></div></div><div class="bar-item"><div class="bar-header"><span>Outra</span><strong>4 · 27%</strong></div><div class="bar-track"><div class="bar-fill gold" data-w="27"></div></div></div></div></div><div class="q-card"><div class="q-num">6</div><h4 class="q-text">A logística de transporte do evento foi satisfatória?</h4><div class="bar-chart-row"><div class="bar-item"><div class="bar-header"><span>Sim</span><strong>10 · 67%</strong></div><div class="bar-track"><div class="bar-fill gold" data-w="67"></div></div></div><div class="bar-item"><div class="bar-header"><span>Não</span><strong>0</strong></div><div class="bar-track"><div class="bar-fill gold" data-w="0"></div></div></div><div class="bar-item"><div class="bar-header"><span>Outra</span><strong>5 · 33%</strong></div><div class="bar-track"><div class="bar-fill gold" data-w="33"></div></div></div></div></div><div class="q-card"><div class="q-num">7</div><h4 class="q-text">O que você considerou mais útil ou positivo neste encontro?</h4><div class="q-count">13 <span>respostas</span></div><p class="q-note">6 respondentes (46%) responderam troca para esta pergunta.</p></div><div class="q-card"><div class="q-num">8</div><h4 class="q-text">O que você considerou mais negativo neste encontro?</h4><div class="q-count">14 <span>respostas</span></div><p class="q-note">7 respondentes (50%) responderam tempo para esta pergunta.</p></div><div class="q-card"><div class="q-num">9</div><h4 class="q-text">Há algum assunto disciplinar que deveria ser aprofundado em futuros encontros?</h4><div class="q-count">12 <span>respostas</span></div><p class="q-note">3 respondentes (25%) responderam acidentes para esta pergunta.</p></div><div class="q-card"><div class="q-num">10</div><h4 class="q-text">Comentários ou sugestões adicionais para nosso próximo Encontro em 2027:</h4><div class="q-count">13 <span>respostas</span></div><p class="q-note">3 respondentes (23%) responderam próximo encontro para esta pergunta.</p></div></div></div>
+        </div>
+      </section>
+
+      <!-- 22 APROFUNDAMENTO FUTURO -->
+      <section class="slide" data-slide="22" id="slide-22" aria-label="Temas para aprofundamento futuro">
+        <div class="slide-inner">
+          <div class="slide-eyebrow"><span class="num">Seções 6 e 7</span></div>
           <h2 class="slide-title">Temas para aprofundamento futuro</h2>
-          <p class="slide-lede">Apontados como pauta para continuidade — não como decisão formal da administração.</p>
+          <p class="slide-lede">A avaliação também registrou percepção, por mais de um respondente, de que faltou tempo para apreciação mais aprofundada de alguns temas, em razão do volume e da complexidade do conteúdo tratado.</p>
           <div class="slide-body">
             <div class="chip-row">
-              <span class="tag-item emph">Casuística de TAC (critérios, tipos de obrigação, boas práticas)</span>
-              <span class="tag-item emph">Acidentes e uso de viaturas</span>
-              <span class="tag-item emph">Improbidade administrativa</span>
-              <span class="tag-item">Responsabilidade pessoal x funcional</span>
-              <span class="tag-item">Assédio sexual e moral</span>
-              <span class="tag-item">Violência doméstica e familiar</span>
-              <span class="tag-item">Prescrição</span>
-              <span class="tag-item emph">Uso de inteligência artificial na gestão de procedimentos disciplinares</span>
+              <span class="tag-item static">casuística de Termos de Ajustamento de Conduta — critérios, tipos de obrigação e boas práticas de obrigações de fazer</span>
+              <span class="tag-item static">improbidade administrativa</span>
+              <span class="tag-item static">acidentes e uso de viaturas</span>
+              <span class="tag-item static">responsabilidade pessoal versus funcional</span>
+              <span class="tag-item static">assédio sexual e moral</span>
+              <span class="tag-item static">violência doméstica e familiar</span>
+              <span class="tag-item static">prescrição</span>
+              <span class="tag-item static">o uso de inteligência artificial na análise e gestão de procedimentos disciplinares</span>
             </div>
-            <div class="info-card">
-              <p>Uma das avaliações menciona expectativa de novo encontro em 2027 — sem formalização de periodicidade no conjunto documental considerado.</p>
+            <div class="info-card"><p>Parte da casuística de Termos de Ajustamento de Conduta — critérios, tipos de obrigação e boas práticas de obrigações de fazer — permaneceu como ponto não fechado, e outros assuntos foram sugeridos para aprofundamento em encontros futuros: improbidade administrativa, acidentes e uso de viaturas, responsabilidade pessoal versus funcional, assédio sexual e moral, violência doméstica e familiar, prescrição, e o uso de inteligência artificial na análise e gestão de procedimentos disciplinares.</p></div>
+            <div class="info-card"><div class="k-label">Temas que demandam continuidade ou aprofundamento</div><p>A avaliação pós-encontro indicou temas para aprofundamento em edições futuras: casuística de TAC, acidentes e uso de viaturas, improbidade administrativa, responsabilidade pessoal versus funcional, assédio sexual e moral, prescrição e uso de inteligência artificial na análise e gestão de procedimentos disciplinares. Esses temas são apontados como pauta para continuidade, e não como decisão formal da administração.</p></div>
+            <div class="card-grid">
+              <div class="info-card"><div class="k-label">Continuidade da iniciativa</div><p>Uma das avaliações menciona expectativa de novo encontro em 2027</p><p>Não há formalização de periodicidade no conjunto documental considerado</p></div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ============================= SLIDE 21 — CONCLUSÃO ============================= -->
-      <section class="slide" data-slide="21" id="slide-21">
+      <!-- 23 CONCLUSÃO -->
+      <section class="slide" data-slide="23" id="slide-23" aria-label="Conclusão">
         <div class="slide-inner">
-          <div class="slide-eyebrow"><span class="num">09</span> Conclusão</div>
-          <h2 class="slide-title">Uma contribuição concreta ao alinhamento técnico</h2>
+          <div class="slide-eyebrow"><span class="num">Seção 8</span></div>
+          <h2 class="slide-title">Conclusão</h2>
           <div class="slide-body">
-            <p style="font-size:.95rem;color:#d4d4d8;line-height:1.7;">O Encontro de Alinhamento Técnico da Área Disciplinar — 2026 reuniu, ao longo de quatro dias, conteúdos relacionados às principais etapas da atividade disciplinar, combinando exposições técnicas, discussão de casos e alinhamento de questões jurídicas e procedimentais recorrentes. Promoveu intercâmbio técnico entre participantes da área disciplinar, em programação planejada para abranger os 27 Núcleos de Disciplina e as 11 Comissões Permanentes de Disciplina, reunindo diversidade de conteúdos — do diagnóstico do estoque à dosimetria, passando por admissibilidade, prescrição, sigilo, TAC e acidentes com viaturas — e casos práticos contemplando as onze CPDs, com maior detalhamento no relatório para seis delas.</p>
-            <div class="highlight-box">
-              <div class="h-label">Contribuição institucional do encontro</div>
-              <p>Em conjunto, os resultados evidenciam a contribuição do encontro para o fortalecimento do alinhamento técnico, para a circulação de experiências entre as unidades e para o aperfeiçoamento das práticas disciplinares no âmbito da Polícia Federal.</p>
-            </div>
+            <p class="prose">O Encontro de Alinhamento Técnico da Área Disciplinar — 2026 reuniu, ao longo de quatro dias, conteúdos relacionados às principais etapas da atividade disciplinar, combinando exposições técnicas, discussão de casos e alinhamento de questões jurídicas e procedimentais recorrentes.</p>
+            <p class="prose">O encontro promoveu intercâmbio técnico entre participantes da área disciplinar, em programação planejada para abranger os 27 Núcleos de Disciplina e as 11 Comissões Permanentes de Disciplina, reunindo diversidade de conteúdos técnicos — do diagnóstico do estoque de processos disciplinares à dosimetria, passando por admissibilidade, prescrição, sigilo, TAC e acidentes com viaturas — e a apresentação de casos práticos por seis das onze CPDs. Ao final do processo de debate, foram consolidados onze entendimentos técnicos sobre temas recorrentes da atividade disciplinar, e foram identificados temas que demandam aprofundamento em edições futuras, entre eles a casuística de TAC, acidentes e uso de viaturas, improbidade administrativa e o uso de inteligência artificial na gestão de procedimentos disciplinares.</p>
+            <div class="highlight-box"><div class="h-label">Contribuição institucional do encontro</div><p>Em conjunto, os resultados evidenciam a contribuição do encontro para o fortalecimento do alinhamento técnico, para a circulação de experiências entre as unidades e para o aperfeiçoamento das práticas disciplinares no âmbito da Polícia Federal.</p></div>
           </div>
         </div>
       </section>
 
-      <!-- ============================= SLIDE 22 — ENCERRAMENTO ============================= -->
-      <section class="slide closing-slide" data-slide="22" id="slide-22">
+      <!-- 24 ANEXO IV — DADOS QUANTITATIVOS COMPLEMENTARES -->
+      <section class="slide" data-slide="24" id="slide-24" aria-label="Dados quantitativos complementares">
+        <div class="slide-inner">
+          <div class="slide-eyebrow"><span class="num">Anexo IV</span></div>
+          <h2 class="slide-title">Dados quantitativos complementares</h2>
+          <div class="slide-body"><p class="slide-lede">Estes dados constam do material técnico da apresentação de alinhamento técnico inicial e são reproduzidos aqui com o detalhamento que excede o corpo principal. Todos devem ser lidos com a ressalva de que são os dados apresentados no material técnico, sem verificação estatística independente por este relatório, e sem pressuposto de que as categorias sejam mutuamente excludentes entre si.</p><div class="info-card"><div class="k-label">Estoque de PADs:</div><p>estoque bruto original de 187 PADs; exclusão de 32 já relatados; estoque ativo real de 155 PADs; duração média de 360,5 dias (redução de 60 dias em relação ao número bruto); mediana de 313 dias (redução de 37 dias); processo mais antigo com 2.100 dias.</p></div><div class="info-card"><div class="k-label">Segmentação por ano de instauração (dos 155 processos ativos):</div><p>2026 — 61 processos, média de 102 dias; 2025 — 72 processos, média de 381 dias; 2024 — 15 processos, média de 732 dias; 2023 ou anteriores — 7 processos, sem prazo médio indicado no material; total de 2025+2026: 133 processos (85,8%); total de 2024 ou anteriores: 22 processos (14,2%).</p></div><div class="info-card"><div class="k-label">Prazo médio por Comissão:</div><p>o material identifica individualmente 14 unidades (as CPDs e representações estaduais específicas), com prazo médio variando de valores baixos, em comissões com estoque recente e reduzido, a mais de 2.000 dias em unidades com apenas um processo remanescente de longa duração.</p></div><div class="info-card"><div class="k-label">Estratégia de gestão proposta no material:</div><p>Frente 1 — “Recuperar”: intervenção direcionada nos 22 processos do passivo histórico. Frente 2 — “Blindar”: gestão rigorosa e aceleração instrutória nos 72 processos de 2025.</p></div><div class="info-card"><div class="k-label">Painel de Registro de Fato Disciplinar (RDF):</div><p>1.580 instaurados; 118 em andamento; 1.417 decididos; 42 encerrados sem decisão; duração média de 49 dias. Decisões por tipo: arquivamento (915), instauração de novo procedimento (171), arquivamento por outros fundamentos (94, 15 e 14, em categorias distintas do material), transformação em outro procedimento (74) e apensação (9). Decisões por região, em ordem decrescente: Sudeste, Nordeste, Norte, Coger, Sul, Centro-Oeste.</p></div><div class="info-card"><div class="k-label">Painel de Investigação Preliminar Sumária (IPS):</div><p>1.052 instauradas; 136 em andamento; 647 relatadas; 878 decididas; 43 encerradas sem decisão; duração média de 134 dias. Decisões por tipo: arquivamento (458), instauração de novo procedimento (117), arquivamento por outros fundamentos (83, 58 e 49, em categorias distintas do material), transformação em outro procedimento (23) e celebração de termo (19). Decisões por região, em ordem decrescente: Sudeste, Norte, Sul, Nordeste, Centro-Oeste, Coger.</p></div><div class="info-card"><div class="k-label">Estrutura organizacional:</div><p>27 Núcleos de Disciplina (capilaridade regional); 11 Comissões Permanentes de Disciplina (especialização e capacidade de resposta estruturada).</p></div></div>
+        </div>
+      </section>
+
+      <!-- 25 ENCERRAMENTO -->
+      <section class="slide closing-slide" data-slide="25" id="slide-25" aria-label="Encerramento">
         <div class="slide-inner">
           <img src="assets/logo-pf.png" alt="Brasão da Polícia Federal" class="closing-badge">
           <div class="cover-org">Encontro de Alinhamento Técnico da Área Disciplinar — 2026</div>
           <h2 class="slide-title" style="text-align:center;">Fim da apresentação</h2>
           <div class="credit-table">
-            <div class="credit-row"><span>Realização</span><span>Corregedoria-Geral da PF · Coordenação-Geral de Disciplina (CGDIS)</span></div>
-            <div class="credit-row"><span>Local</span><span>Academia Nacional de Polícia, Brasília/DF</span></div>
-            <div class="credit-row"><span>Período</span><span>08 a 11 de setembro de 2026</span></div>
-            <div class="credit-row"><span>Coordenação</span><span>DPF Luciana Caires</span></div>
+            <div class="credit-row"><span>Realização</span><span>Corregedoria-Geral da Polícia Federal — Coordenação-Geral de Disciplina</span></div>
+            <div class="credit-row"><span>Local</span><span>Academia Nacional de Polícia, em Brasília-DF</span></div>
+            <div class="credit-row"><span>Período</span><span>8 a 11 de setembro de 2026</span></div>
             <div class="credit-row"><span>Corregedora-Geral</span><span>DPF Aletea Marona Kunde</span></div>
-            <div class="credit-row"><span>Encerramento</span><span>DPF Fernanda Camargo (Corregedora-Geral substituta)</span></div>
+            <div class="credit-row"><span>Corregedora-Geral substituta</span><span>DPF Fernanda Camargo</span></div>
           </div>
           <div class="closing-actions">
-            <button class="deck-nav-btn primary" onclick="goToSlide(1)">Voltar ao início</button>
-            <button class="deck-nav-btn" onclick="goToSlide(2)">Voltar ao roteiro</button>
+            <button class="deck-nav-btn primary" data-go="1">Voltar ao início</button>
+            <button class="deck-nav-btn" data-go="2">Voltar ao roteiro</button>
             <button class="deck-nav-btn" onclick="replaySplash()">Rever abertura</button>
           </div>
         </div>
       </section>
 
-    </div>
+    </main>
 
-    <div class="deck-nav">
-      <button class="deck-nav-btn" id="btnPrev" onclick="prevSlide()">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 18l-6-6 6-6"/></svg>
+    <nav class="deck-nav" aria-label="Navegação da apresentação">
+      <button class="deck-nav-btn" id="btnPrev" type="button">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
         <span class="lbl">Anterior</span>
       </button>
-      <div class="deck-dots" id="deckDots"></div>
-      <div class="deck-counter" id="deckCounter">1 / 22</div>
-      <button class="deck-nav-btn primary" id="btnNext" onclick="nextSlide()">
+      <div class="deck-dots" id="deckDots" aria-hidden="true"></div>
+      <div class="deck-counter" id="deckCounter" aria-live="polite">1 / 25</div>
+      <button class="deck-nav-btn primary" id="btnNext" type="button">
         <span class="lbl">Avançar</span>
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
       </button>
-    </div>
+    </nav>
 
   </div>
 
   <script>
-    var TOTAL_SLIDES = 22;
+    var TOTAL_SLIDES = document.querySelectorAll('.slide').length;
     var currentSlide = 1;
     var splashTimeout = null;
 
-    function toggleFullscreen() {
-      try {
-        if (!document.fullscreenElement && document.documentElement.requestFullscreen) {
-          document.documentElement.requestFullscreen();
-        } else if (document.exitFullscreen) {
-          document.exitFullscreen();
-        }
-      } catch (e) {}
-    }
-
-
-    /* =========================================================================
-       SPLASH SCREEN
-       ========================================================================= */
+    /* ABERTURA ANIMADA */
     function initSplash() {
       splashTimeout = setTimeout(function () { dismissSplash(); }, 2800);
     }
@@ -1554,50 +1491,20 @@ header,.deck-nav{background:rgba(10,10,13,.78);backdrop-filter:blur(24px) satura
       splashTimeout = setTimeout(function () { dismissSplash(); }, 2800);
     }
 
-    /* =========================================================================
-       DECK ENGINE (TELAS DINÂMICAS)
-       ========================================================================= */
+    /* TELAS DINÂMICAS */
     function buildDots() {
       var wrap = document.getElementById('deckDots');
       var html = '';
       for (var i = 1; i <= TOTAL_SLIDES; i++) {
-        html += '<div class="deck-dot" data-dot="' + i + '" onclick="goToSlide(' + i + ')"></div>';
+        html += '<div class="deck-dot" data-dot="' + i + '" data-go="' + i + '"></div>';
       }
       wrap.innerHTML = html;
     }
 
-    function goToSlide(n) {
-      n = Math.max(1, Math.min(TOTAL_SLIDES, n));
-      var slides = document.querySelectorAll('.slide');
-      slides.forEach(function (s) { s.classList.remove('active'); });
-      var target = document.getElementById('slide-' + n);
-      if (target) {
-        target.classList.add('active');
-        var inner = target.querySelector('.slide-inner');
-        if (inner) inner.scrollTop = 0;
-      }
-      currentSlide = n;
-
-      document.getElementById('deckCounter').textContent = n + ' / ' + TOTAL_SLIDES;
-      document.getElementById('progressFill').style.width = ((n - 1) / (TOTAL_SLIDES - 1) * 100) + '%';
-      document.getElementById('btnPrev').disabled = (n === 1);
-      document.getElementById('btnNext').disabled = (n === TOTAL_SLIDES);
-
-      var dots = document.querySelectorAll('.deck-dot');
-      dots.forEach(function (d) { d.classList.toggle('active', parseInt(d.getAttribute('data-dot'), 10) === n); });
-
-      if (history.replaceState) history.replaceState(null, '', '#s-' + n);
-
-      animateBars(target);
-    }
-
-    function nextSlide() { goToSlide(currentSlide + 1); }
-    function prevSlide() { goToSlide(currentSlide - 1); }
-
     function animateBars(slide) {
       if (!slide) return;
       var fills = slide.querySelectorAll('.bar-fill[data-w]');
-      fills.forEach(function (f) {
+      Array.prototype.forEach.call(fills, function (f) {
         var w = f.getAttribute('data-w');
         f.style.width = '0%';
         requestAnimationFrame(function () {
@@ -1606,44 +1513,73 @@ header,.deck-nav{background:rgba(10,10,13,.78);backdrop-filter:blur(24px) satura
       });
     }
 
-    /* =========================================================================
-       FILTROS INLINE (SEM POPUPS)
-       ========================================================================= */
+    function goToSlide(n) {
+      n = Math.max(1, Math.min(TOTAL_SLIDES, n));
+      var slides = document.querySelectorAll('.slide');
+      Array.prototype.forEach.call(slides, function (s) {
+        s.classList.remove('active');
+        s.setAttribute('aria-hidden', 'true');
+      });
+      var target = document.getElementById('slide-' + n);
+      if (target) {
+        target.classList.add('active');
+        target.setAttribute('aria-hidden', 'false');
+        var inner = target.querySelector('.slide-inner');
+        if (inner) inner.scrollTop = 0;
+      }
+      currentSlide = n;
+      document.getElementById('deckCounter').textContent = n + ' / ' + TOTAL_SLIDES;
+      document.getElementById('progressFill').style.width = ((n - 1) / (TOTAL_SLIDES - 1) * 100) + '%';
+      document.getElementById('btnPrev').disabled = (n === 1);
+      document.getElementById('btnNext').disabled = (n === TOTAL_SLIDES);
+      Array.prototype.forEach.call(document.querySelectorAll('.deck-dot'), function (d) {
+        d.classList.toggle('active', parseInt(d.getAttribute('data-dot'), 10) === n);
+      });
+      try { if (window.history && history.replaceState) history.replaceState(null, '', '#s-' + n); } catch (err) { /* contexto restrito */ }
+      animateBars(target);
+    }
+    function nextSlide() { goToSlide(currentSlide + 1); }
+    function prevSlide() { goToSlide(currentSlide - 1); }
+
+    /* FILTROS INLINE (SEM POP-UPS) */
     function setDay(day, btn) {
-      document.querySelectorAll('.day-tab').forEach(function (b) { b.classList.remove('active'); });
+      Array.prototype.forEach.call(document.querySelectorAll('.day-tab'), function (b) { b.classList.remove('active'); });
       btn.classList.add('active');
-      document.querySelectorAll('.day-panel').forEach(function (p) {
+      Array.prototype.forEach.call(document.querySelectorAll('.day-panel'), function (p) {
         p.classList.toggle('active', parseInt(p.getAttribute('data-day'), 10) === day);
       });
     }
-
     function setGrupo(grupo, btn) {
-      document.querySelectorAll('#slide-18 .filter-pill').forEach(function (b) { b.classList.remove('active'); });
+      Array.prototype.forEach.call(document.querySelectorAll('#slide-19 .filter-pill'), function (b) { b.classList.remove('active'); });
       btn.classList.add('active');
-      document.querySelectorAll('#entendimentosGrid .entendimento-card').forEach(function (c) {
+      Array.prototype.forEach.call(document.querySelectorAll('#entendimentosGrid .entendimento-card'), function (c) {
         var g = c.getAttribute('data-grupo');
         c.style.display = (grupo === 'all' || g === grupo) ? 'flex' : 'none';
       });
     }
 
-    /* =========================================================================
-       SWIPE (TOUCH) — IPAD / WHATSAPP IN-APP BROWSER
-       ========================================================================= */
+    document.addEventListener('click', function (e) {
+      var go = e.target.closest ? e.target.closest('[data-go]') : null;
+      if (go) { e.preventDefault(); goToSlide(parseInt(go.getAttribute('data-go'), 10)); return; }
+      var dt = e.target.closest ? e.target.closest('.day-tab') : null;
+      if (dt) { setDay(parseInt(dt.getAttribute('data-day'), 10), dt); return; }
+      var fp = e.target.closest ? e.target.closest('.filter-pill') : null;
+      if (fp) { setGrupo(fp.getAttribute('data-grupo'), fp); return; }
+    });
+
+    /* GESTO DE ARRASTAR (IPAD / NAVEGADOR DO WHATSAPP) */
     (function () {
       var deck = document.getElementById('deck');
       var startX = 0, startY = 0, tracking = false;
-
       deck.addEventListener('touchstart', function (e) {
-        if (e.target.closest('.table-responsive-wrapper, .filter-track, .day-tab-track, details')) { tracking = false; return; }
+        if (e.target.closest('.table-responsive-wrapper, .filter-track, .day-tab-track, details, a, button')) { tracking = false; return; }
         var t = e.changedTouches[0];
         startX = t.clientX; startY = t.clientY; tracking = true;
       }, { passive: true });
-
       deck.addEventListener('touchend', function (e) {
         if (!tracking) return;
         var t = e.changedTouches[0];
-        var dx = t.clientX - startX;
-        var dy = t.clientY - startY;
+        var dx = t.clientX - startX, dy = t.clientY - startY;
         if (Math.abs(dx) > 55 && Math.abs(dx) > Math.abs(dy) * 1.4) {
           if (dx < 0) nextSlide(); else prevSlide();
         }
@@ -1651,26 +1587,32 @@ header,.deck-nav{background:rgba(10,10,13,.78);backdrop-filter:blur(24px) satura
       }, { passive: true });
     })();
 
-    /* =========================================================================
-       INICIALIZAÇÃO
-       ========================================================================= */
     document.addEventListener('DOMContentLoaded', function () {
       initSplash();
       buildDots();
+      document.getElementById('btnPrev').addEventListener('click', prevSlide);
+      document.getElementById('btnNext').addEventListener('click', nextSlide);
 
-      var startSlide = 1;
-      var hash = window.location.hash;
-      if (hash && hash.indexOf('#s-') === 0) {
-        var n = parseInt(hash.replace('#s-', ''), 10);
-        if (n >= 1 && n <= TOTAL_SLIDES) startSlide = n;
-      }
-      goToSlide(startSlide);
+      var start = 1;
+      var m = /^#s-(\d+)$/.exec(window.location.hash || '');
+      if (m) { var n = parseInt(m[1], 10); if (n >= 1 && n <= TOTAL_SLIDES) start = n; }
+      goToSlide(start);
+
+      window.addEventListener('hashchange', function () {
+        var h = /^#s-(\d+)$/.exec(window.location.hash || '');
+        if (h) { var k = parseInt(h[1], 10); if (k >= 1 && k <= TOTAL_SLIDES && k !== currentSlide) goToSlide(k); }
+      });
 
       window.addEventListener('keydown', function (e) {
+        if (e.ctrlKey || e.metaKey || e.altKey) return;
         var splash = document.getElementById('splashScreen');
-        if (splash && splash.style.display !== 'none' && !splash.classList.contains('fade-out')) {
-          if (e.key === 'Escape' || e.key === ' ' || e.key === 'Enter') { skipSplash(); return; }
+        var splashOn = splash && splash.style.display !== 'none' && !splash.classList.contains('fade-out');
+        if (splashOn) {
+          if (e.key === 'Escape' || e.key === ' ' || e.key === 'Enter') { e.preventDefault(); skipSplash(); }
+          return;
         }
+        var tag = (e.target && e.target.tagName) || '';
+        if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
         if (e.key === 'ArrowRight' || e.key === 'PageDown') nextSlide();
         else if (e.key === 'ArrowLeft' || e.key === 'PageUp') prevSlide();
         else if (e.key === 'Home') goToSlide(1);
